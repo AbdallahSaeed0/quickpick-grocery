@@ -1,0 +1,40 @@
+/* src/styles/CounterSection.css */
+.counter-section {
+    background-color: #ff9900; /* Orange background */
+    color: #fff;
+    padding: 30px 15px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+  }
+  
+  .counter-box {
+    padding: 20px;
+  }
+  .counter-border{
+    border-right: 1px solid #D9D9D9;
+  }
+  .counter-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .counter-label {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .counter-number {
+      font-size: 2rem;
+    }
+  
+    .counter-label {
+      font-size: 1rem;
+    }
+  
+    .counter-box {
+      padding: 15px;
+    }
+  }

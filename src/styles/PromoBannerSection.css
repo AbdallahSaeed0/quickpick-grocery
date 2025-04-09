@@ -1,0 +1,53 @@
+/* src/styles/PromoBannerSection.css */
+.promo-banner-section {
+    background-image: url('../../public/assets/promo-banner-image.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 0; /* Increased padding to ensure the section has enough height */
+    position: relative;
+    min-height: 650px; /* Ensure the section has enough height to display the background */
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  .promo-text {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    align-items: center;
+    height: 100%;
+  }
+  
+  .app-store-buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .store-button {
+    width: 150px;
+    height: auto;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .promo-banner-section {
+      padding: 80px 0;
+      min-height: 300px;
+    }
+  
+    .promo-text {
+      justify-content: center; /* Center buttons on mobile */
+    }
+  
+    .app-store-buttons {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+    }
+  
+    .store-button {
+      width: 120px;
+    }
+  }

@@ -1,0 +1,88 @@
+/* src/styles/Banner.css */
+.banner-section {
+    background-color: #FAFAFA;
+    border: 1px solid #0000001A;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    height: 593px;
+    background-image: url('../../public/assets/home-banner.png');
+    background-size: contain;
+    background-position: center right;
+    background-repeat: no-repeat;
+  }
+  
+  .banner-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #000;
+    line-height: 1.2;
+  }
+  
+  .banner-title .text-success {
+    color: #28a745;
+  }
+  
+  .banner-subtitle {
+    font-size: 13px;
+    color: #6c757d;
+    padding-inline-start: 10px;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Custom Input Group Styling */
+  .custom-input-group {
+    max-width: 350px; /* Adjust to match the screenshot width */
+    border: 1px solid #ced4da; /* Continuous border around the entire group */
+    border-radius: 50px; /* Rounded edges */
+    overflow: hidden; /* Ensure the border-radius applies correctly */
+  }
+  
+  .custom-input {
+    border: none; /* Remove default input border */
+    border-right: none; /* Ensure no border between input and button */
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 10px 20px;
+    border-radius: 50px 0 0 50px; /* Rounded on the left side only */
+    box-shadow: none !important; /* Remove Bootstrap's focus shadow */
+  }
+  
+ .banner-section .custom-input:focus {
+    border: none;
+    box-shadow: none !important; /* Remove focus shadow */
+  }
+  
+  .banner-section .custom-button {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+    border: none; /* Remove default button border */
+    border-radius: 50px !important; /* Rounded on the right side only */
+    padding: 10px 55px;
+    color: #fff;
+  }
+  
+  .custom-button:hover {
+    background-color: #218838 !important;
+    border-color: #218838 !important;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .banner-section {
+      height: auto;
+      background-size: cover;
+      background-position: center;
+    }
+  
+    .banner-title {
+      font-size: 2rem;
+    }
+  
+    .banner-subtitle {
+      font-size: 1rem;
+    }
+  
+    .custom-input-group {
+      max-width: 100%;
+    }
+  }
