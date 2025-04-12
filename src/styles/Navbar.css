@@ -36,23 +36,20 @@ div {
     background-color: #60AD4C;
     border-radius: 0 0 12px 12px;
   }
+  .cart-section div {
+    text-align: center;
+  }
   .first-section{
     border-right: 1px solid #ffffff40;
     padding: 15px 0px;
-    padding-inline: 0px 20px;
   }
   .second-section{
     border-right: 1px solid #ffffff40;
     padding: 25px 0px;
-    padding-inline: 10px;
   }
   .third-section{
     padding: 25px 0px;
-    padding-inline: 10px;
     border-right: 1px solid #ffffff40;
-  }
-  .fourth-section{
-    padding-inline: 15px 0px;
   }
   .cart{
     width: 43px;
@@ -87,9 +84,9 @@ div {
   }
   
   .navbar-nav .nav-link {
-    padding: 8px 35px !important;
+    padding: 8px 20px !important;
     color: #000;
-    font-size: 16px;
+    font-size: 14px;
   }
   
   .navbar-nav .nav-link:hover {
@@ -98,4 +95,11 @@ div {
   
   .navbar-light {
     background-color: #fff !important; 
+  }
+
+  @media (max-width: 1200px) {
+    .navbar-nav .nav-link{
+      padding: 5px 10px !important;
+      font-size: 12px;
+    }
   }

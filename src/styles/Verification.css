@@ -1,0 +1,119 @@
+/* src/styles/VerificationPage.css */
+.verification-page {
+    min-height: 100vh;
+    background-color: #fff;
+  }
+  
+  .verification-form {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .verification-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1a3c34;
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: lowercase;
+  }
+  
+  .verification-subtitle {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .code-input {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 1.2rem;
+    border: 1px solid #28a745;
+    border-radius: 5px;
+  }
+  
+  .code-input:focus {
+    border-color: #218838;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
+  }
+  
+  .resend-text {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 20px;
+  }
+  
+  .resend-link {
+    color: #28a745;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .resend-link:hover {
+    color: #218838;
+    text-decoration: underline;
+  }
+  
+  .verify-button {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .verify-button:hover {
+    background-color: #218838 !important;
+    border-color: #218838 !important;
+  }
+  
+  .verification-image-col {
+    background-color: #28a745; /* Green background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .verification-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .verification-page {
+      min-height: auto;
+    }
+  
+    .verification-form {
+      padding: 30px 15px;
+    }
+  
+    .verification-title {
+      font-size: 1.5rem;
+    }
+  
+    .verification-subtitle {
+      font-size: 0.9rem;
+    }
+  
+    .code-input {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+  
+    .resend-text {
+      font-size: 0.8rem;
+    }
+  
+    .verify-button {
+      padding: 8px;
+      font-size: 0.9rem;
+    }
+  }

@@ -1,0 +1,62 @@
+/* src/styles/ErrorPage.css */
+.error-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .error-code {
+    font-size: 8rem;
+    font-weight: bold;
+    color: #ff9900; /* Orange color */
+    margin-bottom: 20px;
+  }
+  
+  .error-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1a3c34;
+    margin-bottom: 15px;
+    text-transform: lowercase;
+  }
+  
+  .error-subtitle {
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-bottom: 30px;
+  }
+  
+  .back-to-home-button {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+    border-radius: 20px;
+    padding: 10px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .back-to-home-button:hover {
+    background-color: #218838 !important;
+    border-color: #218838 !important;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .error-code {
+      font-size: 6rem;
+    }
+  
+    .error-title {
+      font-size: 1.5rem;
+    }
+  
+    .error-subtitle {
+      font-size: 1rem;
+    }
+  
+    .back-to-home-button {
+      padding: 8px 20px;
+      font-size: 0.9rem;
+    }
+  }

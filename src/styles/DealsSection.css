@@ -99,7 +99,6 @@
   }
 
   .discount-badge {
-    top: 50px; /* Adjust for smaller card-header */
     font-size: 0.8rem;
   }
 

@@ -9,7 +9,7 @@ function PromoSection() {
       <Container>
         <Row>
           {/* Card 1: Cooking Ideas */}
-          <Col md={6} className="mb-4">
+          <Col md={9} lg={6} className="mb-4">
             <div
               className="promo-card"
               style={{
@@ -27,7 +27,7 @@ function PromoSection() {
           </Col>
 
           {/* Card 2: Fast Delivery */}
-          <Col md={6} className="mb-4">
+          <Col md={9} lg={6} className="mb-4">
             <div
               className="promo-card"
               style={{

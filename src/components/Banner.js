@@ -5,7 +5,7 @@ import '../styles/Banner.css';
 
 function Banner() {
   return (
-    <div className="banner-section d-flex align-items-center container" style={{ height: '593px' }}>
+    <div className="banner-section d-flex align-items-center container">
       <Container className="p-0">
         <Row className="align-items-center m-0">
           {/* Left Side: Text and Search Input */}

@@ -67,22 +67,82 @@
   }
   
   /* Responsiveness */
+  @media screen and (min-width:768px) and (max-width: 992px)  {
+    .banner-section {
+      height: 290px;
+      background-size: cover;
+      background-position: center;
+    }
+    .banner-title{
+      font-size: 26px;
+      width: 75%;
+    }
+    .banner-subtitle {
+      font-size: 12px;
+      width: 65%;
+    }
+    .custom-input-group {
+      max-width: 215px;
+    }
+    .banner-section .custom-button{
+      padding: 9px 12px;
+    }
+    .custom-input{
+      padding: 10px 10px;
+    }
+  }
   @media (max-width: 768px) {
     .banner-section {
-      height: auto;
+      height: 220px;
       background-size: cover;
       background-position: center;
     }
   
     .banner-title {
-      font-size: 2rem;
+      font-size: 20px;
+      width: 40%;
     }
   
     .banner-subtitle {
-      font-size: 1rem;
+      font-size: 12px;
+      width: 30%;
     }
   
     .custom-input-group {
-      max-width: 100%;
+      max-width: 230px;
+  }
+    .banner-section .custom-button{
+      padding: 9px 12px;
+    }
+    .custom-input{
+      padding: 10px 10px;
+    }
+  }
+  @media (max-width: 575px) {
+    .banner-section {
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+    }
+  
+    .banner-title {
+      font-size: 14px;
+      width: 40%;
+    }
+  
+    .banner-subtitle {
+      font-size: 12px;
+      width: 30%;
+      padding-inline-start: 0px;
+    }
+  
+    .custom-input-group {
+      max-width: 200px;
+  }
+    .banner-section .custom-button{
+      padding: 9px 12px;
+    }
+    .custom-input{
+      padding: 10px 10px;
     }
   }

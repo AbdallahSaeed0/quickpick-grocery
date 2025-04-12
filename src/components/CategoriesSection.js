@@ -50,9 +50,9 @@ function CategoriesSection() {
         </div>
 
         {/* Category Cards */}
-        <Row>
+        <Row className="justify-content-center">
           {categories.map((category) => (
-            <Col md={2} key={category.id} className="mb-4">
+            <Col xl={2} lg={3} md={4} key={category.id} className="col-5 mb-4">
               <Link to={`/category/${category.id}`} className="text-decoration-none">
                 <Card className="category-card">
                   <Card.Img

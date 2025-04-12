@@ -15,9 +15,9 @@ function DealsSection() {
         <Row className="align-items-start">
           {/* Left Side: Three Cards */}
           <Col md={12}>
-            <Row>
+            <Row className="justify-content-center">
               {/* Card 1: Snacks */}
-              <Col md={4} className="mb-4">
+              <Col md={6} lg={4} className="mb-4 col-9">
                 <Card className="deal-card shadow-top-left">
                   <div className="layout-back"></div>
                   <div className="discount-badge">-17%</div>
@@ -33,7 +33,7 @@ function DealsSection() {
               </Col>
 
               {/* Card 2: Babies Care */}
-              <Col md={4} className="mb-4">
+              <Col md={6} lg={4} className="mb-4 col-9">
                 <Card className="deal-card">
                   <div className="layout-back"></div>
                   <div className="discount-badge">-10%</div>
@@ -49,7 +49,7 @@ function DealsSection() {
               </Col>
 
               {/* Card 3: Personal Care */}
-              <Col md={4} className="mb-4">
+              <Col md={6} lg={4} className="mb-4 col-9">
                 <Card className="deal-card">
                   <div className="layout-back"></div>
                   <div className="discount-badge">-40%</div>

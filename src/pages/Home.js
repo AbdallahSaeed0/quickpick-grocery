@@ -19,10 +19,9 @@ function Home() {
       <DealsSection />
       <PopularProducts />
       <CategoriesSection />
-      <PromoSection />
       <PromoBannerSection />
+      <PromoSection />
       <HowItWorksSection />
-      
       <CounterSection />
       <FooterSection />
     </div>
