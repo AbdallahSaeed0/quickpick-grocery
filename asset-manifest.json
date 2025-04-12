@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/quickpick-grocery/static/css/main.a92bd779.css",
+    "main.js": "/quickpick-grocery/static/js/main.efeab0e0.js",
+    "static/media/promo-banner-image.png": "/quickpick-grocery/static/media/promo-banner-image.79a94265b5f1d20b6ff9.png",
+    "static/media/home-banner.png": "/quickpick-grocery/static/media/home-banner.21f58fbba2c173ba2aee.png",
+    "static/media/bootstrap-icons.woff?": "/quickpick-grocery/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
+    "static/media/bootstrap-icons.woff2?": "/quickpick-grocery/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
+    "index.html": "/quickpick-grocery/index.html",
+    "main.a92bd779.css.map": "/quickpick-grocery/static/css/main.a92bd779.css.map",
+    "main.efeab0e0.js.map": "/quickpick-grocery/static/js/main.efeab0e0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a92bd779.css",
+    "static/js/main.efeab0e0.js"
+  ]
+}
