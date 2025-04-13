@@ -4,19 +4,21 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 100px 0; /* Increased padding to ensure the section has enough height */
+    
     position: relative;
     min-height: 650px; /* Ensure the section has enough height to display the background */
     display: flex;
-    align-items: flex-end;
+    align-items: center;
   }
   
   .promo-text {
-    padding: 60px 20px;
     display: flex;
-    justify-content: flex-end; /* Align buttons to the right */
     align-items: center;
     height: 100%;
+  }
+  .promo-banner-section .row {
+    height: 290px;
+    align-items: flex-end;
   }
   
   .app-store-buttons {
@@ -28,15 +30,66 @@
     width: 150px;
     height: auto;
   }
-  
+  @media (max-width: 1400px) {
+    .promo-banner-section {
+      padding: 0px 14px;
+      min-height: 490px;
+    }
+  }
   @media (max-width: 1290px) {
     .promo-banner-section {
-      padding: 80px 0;
-      min-height: 485px;
+      padding: 0px 14px;
+      min-height: 490px;
+    }
+  
+    .promo-banner-section .row {
+      height: 200px;
+    }
+  
+    .app-store-buttons {
+      align-items: center;
+      gap: 5px;
+      justify-content: center;
+    }
+  
+    .promo-banner-section .store-button {
+      width: 100px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .promo-banner-section {
+      padding: 0px 14px;
+      min-height: 300px;
+    }
+  
+    .promo-banner-section .row {
+      height: 150px;
+    }
+  
+    .app-store-buttons {
+      align-items: center;
+      gap: 5px;
+      justify-content: center;
+    }
+  
+    .promo-banner-section .store-button {
+      width: 100px;
+    }
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 770px) {
+    .promo-banner-section {
+      min-height: 230px;
     }
   
     .promo-text {
-      
+      align-items: flex-end;
+    }
+
+    .promo-banner-section .row  .col-md-4{
+      justify-items: end;
     }
   
     .app-store-buttons {
@@ -49,25 +102,8 @@
       width: 120px;
     }
   }
-  /* Responsiveness */
-  @media (max-width: 768px) {
+  @media (max-width: 558px) {
     .promo-banner-section {
-      padding: 80px 0;
-      min-height: 300px;
-    }
-  
-    .promo-text {
-      
-    }
-  
-    .app-store-buttons {
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      justify-content: center;
-    }
-  
-    .store-button {
-      width: 120px;
+      min-height: 230px;
     }
   }

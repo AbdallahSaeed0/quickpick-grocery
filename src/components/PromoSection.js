@@ -7,7 +7,7 @@ function PromoSection() {
   return (
     <div className="promo-section py-5">
       <Container>
-        <Row>
+        <Row className="justify-content-center">
           {/* Card 1: Cooking Ideas */}
           <Col md={9} lg={6} className="mb-4">
             <div

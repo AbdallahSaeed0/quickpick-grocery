@@ -17,6 +17,7 @@
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 10px;
+    margin-top: 10px;
   }
   
   .counter-label {
@@ -29,12 +30,16 @@
     .counter-number {
       font-size: 2rem;
     }
-  
+    .counter-border {
+      
+      border-right: 0 !important;
+  }
     .counter-label {
       font-size: 1rem;
     }
   
     .counter-box {
-      padding: 15px;
+      padding: 10px;
+      border-bottom: 1px solid #D9D9D9;
     }
   }

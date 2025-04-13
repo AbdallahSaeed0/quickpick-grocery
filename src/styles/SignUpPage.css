@@ -141,11 +141,12 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+    padding: 0px;
   }
   
   .signup-image {
     max-width: 100%;
-    height: auto;
+    height: 90%;
   }
   
   /* Responsiveness */
@@ -160,10 +161,6 @@
   
     .signup-title {
       font-size: 1.5rem;
-    }
-  
-    .inline-logo {
-      width: 30px;
     }
   
     .signup-title sup {

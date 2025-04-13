@@ -7,8 +7,10 @@ function PromoBannerSection() {
   return (
     <div className="container promo-banner-section">
       <Container>
-        <Row className="align-items-center">
-          <Col md={10} className="text-center">
+        <Row className="">
+          <Col md={7} className="text-center">
+          </Col>
+          <Col md={4} className="text-center">
             <div className="promo-text">
               <div className="app-store-buttons">
                 <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">

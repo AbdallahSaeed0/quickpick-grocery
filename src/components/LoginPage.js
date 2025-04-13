@@ -49,13 +49,13 @@ function LoginPage() {
               </Form>
               <div className="separator my-4">or</div>
               <div className="social-login d-flex justify-content-center gap-3 mb-4">
-                <Button variant="outline-dark" className="social-button">
+                <Button variant="outline-dark" className="social-button google">
                   <FaGoogle />
                 </Button>
-                <Button variant="outline-dark" className="social-button">
+                <Button variant="outline-dark" className="social-button facebook">
                   <FaFacebookF />
                 </Button>
-                <Button variant="outline-dark" className="social-button">
+                <Button variant="outline-dark" className="social-button apple">
                   <FaApple />
                 </Button>
               </div>
@@ -69,9 +69,10 @@ function LoginPage() {
           </Col>
 
           {/* Right Side: Image */}
-          <Col md={6} className="d-none d-md-block login-image-col">
+          <Col md={6} className="d-none d-md-flex login-image-col">
+            <div className="loginbackground"></div>
             <img
-              src={process.env.PUBLIC_URL + '/assets/login-image.png'}
+              src={process.env.PUBLIC_URL + '/assets/login.png'}
               alt="Groceries"
               className="login-image"
             />

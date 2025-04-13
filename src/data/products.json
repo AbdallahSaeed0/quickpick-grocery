@@ -1,0 +1,435 @@
+[
+    {
+      "id": 1,
+      "name": "Orange Juice - Freshly Squeezed",
+      "category": "Beverages",
+      "price": "45.00 LE",
+      "image": "/assets/product-1.jpg",
+      "image2": "/assets/product-3.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Green Tea - Mint Flavor",
+      "category": "Beverages",
+      "price": "80.00 LE",
+      "image": "/assets/product-2.jpg",
+      "image2": "/assets/product-4.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Sparkling Water - Lemon",
+      "category": "Beverages",
+      "price": "25.50 LE",
+      "image": "/assets/product-3.jpg",
+      "image2": "/assets/product-5.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Espresso Coffee - Dark Roast",
+      "category": "Beverages",
+      "price": "150.00 LE",
+      "image": "/assets/product-4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Mango Smoothie - 500ml",
+      "category": "Beverages",
+      "price": "60.00 LE",
+      "image": "/assets/product-5.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Cola - Zero Sugar",
+      "category": "Beverages",
+      "price": "20.00 LE",
+      "image": "/assets/product-6.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Herbal Tea - Chamomile",
+      "category": "Beverages",
+      "price": "90.00 LE",
+      "image": "/assets/product-1.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Apple Cider - Organic",
+      "category": "Beverages",
+      "price": "55.00 LE",
+      "image": "/assets/product-2.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Energy Drink - Citrus",
+      "category": "Beverages",
+      "price": "35.00 LE",
+      "image": "/assets/product-3.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Coconut Water - 1L",
+      "category": "Beverages",
+      "price": "70.00 LE",
+      "image": "/assets/product-4.jpg"
+    },
+  
+
+    {
+      "id": 11,
+      "name": "Salmon Fillet - Fresh",
+      "category": "Seafood",
+      "price": "220.00 LE",
+      "image": "/assets/product-5.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Shrimp - Large",
+      "category": "Seafood",
+      "price": "180.00 LE",
+      "image": "/assets/product-6.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Tuna Steak - 500g",
+      "category": "Seafood",
+      "price": "190.00 LE",
+      "image": "/assets/product-1.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Crab Legs - Frozen",
+      "category": "Seafood",
+      "price": "250.00 LE",
+      "image": "/assets/product-2.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Sardines - Canned",
+      "category": "Seafood",
+      "price": "40.00 LE",
+      "image": "/assets/product-3.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Mackerel - Fresh",
+      "category": "Seafood",
+      "price": "130.00 LE",
+      "image": "/assets/product-4.jpg"
+    },
+    {
+      "id": 17,
+      "name": "Cod Fillet - 400g",
+      "category": "Seafood",
+      "price": "200.00 LE",
+      "image": "/assets/product-5.jpg"
+    },
+    {
+      "id": 18,
+      "name": "Calamari Rings - Frozen",
+      "category": "Seafood",
+      "price": "160.00 LE",
+      "image": "/assets/product-6.jpg"
+    },
+    {
+      "id": 19,
+      "name": "Anchovies - Salted",
+      "category": "Seafood",
+      "price": "50.00 LE",
+      "image": "/assets/product-1.jpg"
+    },
+    {
+      "id": 20,
+      "name": "Tilapia - Whole",
+      "category": "Seafood",
+      "price": "110.00 LE",
+      "image": "/assets/product-2.jpg"
+    },
+  
+
+    {
+      "id": 21,
+      "name": "Chicken Breast - 1kg",
+      "category": "Meat & Poultry",
+      "price": "120.00 LE",
+      "image": "/assets/product-3.jpg"
+    },
+    {
+      "id": 22,
+      "name": "Beef Steak - Sirloin",
+      "category": "Meat & Poultry",
+      "price": "280.00 LE",
+      "image": "/assets/product-4.jpg"
+    },
+    {
+      "id": 23,
+      "name": "Turkey Slices - 500g",
+      "category": "Meat & Poultry",
+      "price": "150.00 LE",
+      "image": "/assets/product-5.jpg"
+    },
+    {
+      "id": 24,
+      "name": "Lamb Chops - Fresh",
+      "category": "Meat & Poultry",
+      "price": "300.00 LE",
+      "image": "/assets/product-6.jpg"
+    },
+    {
+      "id": 25,
+      "name": "Pork Sausages - 400g",
+      "category": "Meat & Poultry",
+      "price": "90.00 LE",
+      "image": "/assets/product-1.jpg"
+    },
+    {
+      "id": 26,
+      "name": "Ground Beef - 1kg",
+      "category": "Meat & Poultry",
+      "price": "200.00 LE",
+      "image": "/assets/product-2.jpg"
+    },
+    {
+      "id": 27,
+      "name": "Chicken Thighs - 800g",
+      "category": "Meat & Poultry",
+      "price": "100.00 LE",
+      "image": "/assets/product-3.jpg"
+    },
+    {
+      "id": 28,
+      "name": "Beef Ribs - 1kg",
+      "category": "Meat & Poultry",
+      "price": "260.00 LE",
+      "image": "/assets/product-4.jpg"
+    },
+    {
+      "id": 29,
+      "name": "Duck Breast - 500g",
+      "category": "Meat & Poultry",
+      "price": "180.00 LE",
+      "image": "/assets/product-5.jpg"
+    },
+    {
+      "id": 30,
+      "name": "Chicken Wings - 1kg",
+      "category": "Meat & Poultry",
+      "price": "80.00 LE",
+      "image": "/assets/product-6.jpg"
+    },
+  
+    
+    {
+      "id": 31,
+      "name": "White Bread - Sliced",
+      "category": "Bakery",
+      "price": "15.00 LE",
+      "image": "/assets/product-1.jpg"
+    },
+    {
+      "id": 32,
+      "name": "Croissant - Butter",
+      "category": "Bakery",
+      "price": "25.00 LE",
+      "image": "/assets/product-2.jpg"
+    },
+    {
+      "id": 33,
+      "name": "Whole Wheat Bread",
+      "category": "Bakery",
+      "price": "20.00 LE",
+      "image": "/assets/product-3.jpg"
+    },
+    {
+      "id": 34,
+      "name": "Bagel - Sesame",
+      "category": "Bakery",
+      "price": "18.00 LE",
+      "image": "/assets/product-4.jpg"
+    },
+    {
+      "id": 35,
+      "name": "Muffin - Chocolate",
+      "category": "Bakery",
+      "price": "30.00 LE",
+      "image": "/assets/product-5.jpg"
+    },
+    {
+      "id": 36,
+      "name": "Sourdough Bread",
+      "category": "Bakery",
+      "price": "35.00 LE",
+      "image": "/assets/product-6.jpg"
+    },
+    {
+      "id": 37,
+      "name": "Donut - Glazed",
+      "category": "Bakery",
+      "price": "12.00 LE",
+      "image": "/assets/product-1.jpg"
+    },
+    {
+      "id": 38,
+      "name": "Pretzel - Salted",
+      "category": "Bakery",
+      "price": "22.00 LE",
+      "image": "/assets/product-2.jpg"
+    },
+    {
+      "id": 39,
+      "name": "Pita Bread - 6 Pieces",
+      "category": "Bakery",
+      "price": "10.00 LE",
+      "image": "/assets/product-3.jpg"
+    },
+    {
+      "id": 40,
+      "name": "Baguette - French",
+      "category": "Bakery",
+      "price": "28.00 LE",
+      "image": "/assets/product-4.jpg"
+    },
+  
+    
+    {
+      "id": 41,
+      "name": "Cheddar Cheese - 200g",
+      "category": "Dairy",
+      "price": "65.00 LE",
+      "image": "/assets/product-5.jpg"
+    },
+    {
+      "id": 42,
+      "name": "Yogurt - Greek Style",
+      "category": "Dairy",
+      "price": "30.00 LE",
+      "image": "/assets/product-6.jpg"
+    },
+    {
+      "id": 43,
+      "name": "Butter - Unsalted",
+      "category": "Dairy",
+      "price": "50.00 LE",
+      "image": "/assets/product-1.jpg"
+    },
+    {
+      "id": 44,
+      "name": "Mozzarella Cheese - 250g",
+      "category": "Dairy",
+      "price": "70.00 LE",
+      "image": "/assets/product-2.jpg"
+    },
+    {
+      "id": 45,
+      "name": "Milk - Low Fat, 1L",
+      "category": "Dairy",
+      "price": "35.00 LE",
+      "image": "/assets/product-3.jpg"
+    },
+    {
+      "id": 46,
+      "name": "Cream Cheese - 200g",
+      "category": "Dairy",
+      "price": "45.00 LE",
+      "image": "/assets/product-4.jpg"
+    },
+    {
+      "id": 47,
+      "name": "Feta Cheese - 150g",
+      "category": "Dairy",
+      "price": "40.00 LE",
+      "image": "/assets/product-5.jpg"
+    },
+    {
+      "id": 48,
+      "name": "Sour Cream - 200ml",
+      "category": "Dairy",
+      "price": "25.00 LE",
+      "image": "/assets/product-6.jpg"
+    },
+    {
+      "id": 49,
+      "name": "Parmesan Cheese - 100g",
+      "category": "Dairy",
+      "price": "80.00 LE",
+      "image": "/assets/product-1.jpg"
+    },
+    {
+      "id": 50,
+      "name": "Gouda Cheese - 200g",
+      "category": "Dairy",
+      "price": "60.00 LE",
+      "image": "/assets/product-2.jpg"
+    },
+  
+    
+    {
+      "id": 51,
+      "name": "Apples - Red, 1kg",
+      "category": "Fruits and Vegetables",
+      "price": "40.00 LE",
+      "image": "/assets/product-3.jpg"
+    },
+    {
+      "id": 52,
+      "name": "Carrots - 1kg",
+      "category": "Fruits and Vegetables",
+      "price": "15.00 LE",
+      "image": "/assets/product-4.jpg"
+    },
+    {
+      "id": 53,
+      "name": "Bananas - 1kg",
+      "category": "Fruits and Vegetables",
+      "price": "30.00 LE",
+      "image": "/assets/product-5.jpg"
+    },
+    {
+      "id": 54,
+      "name": "Broccoli - 500g",
+      "category": "Fruits and Vegetables",
+      "price": "25.00 LE",
+      "image": "/assets/product-6.jpg"
+    },
+    {
+      "id": 55,
+      "name": "Oranges - 1kg",
+      "category": "Fruits and Vegetables",
+      "price": "35.00 LE",
+      "image": "/assets/product-1.jpg"
+    },
+    {
+      "id": 56,
+      "name": "Tomatoes - 1kg",
+      "category": "Fruits and Vegetables",
+      "price": "20.00 LE",
+      "image": "/assets/product-2.jpg"
+    },
+    {
+      "id": 57,
+      "name": "Strawberries - 250g",
+      "category": "Fruits and Vegetables",
+      "price": "50.00 LE",
+      "image": "/assets/product-3.jpg"
+    },
+    {
+      "id": 58,
+      "name": "Spinach - 500g",
+      "category": "Fruits and Vegetables",
+      "price": "18.00 LE",
+      "image": "/assets/product-4.jpg"
+    },
+    {
+      "id": 59,
+      "name": "Mangoes - 1kg",
+      "category": "Fruits and Vegetables",
+      "price": "60.00 LE",
+      "image": "/assets/product-5.jpg"
+    },
+    {
+      "id": 60,
+      "name": "Potatoes - 1kg",
+      "category": "Fruits and Vegetables",
+      "price": "12.00 LE",
+      "image": "/assets/product-6.jpg"
+    }
+  ]

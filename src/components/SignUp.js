@@ -14,16 +14,16 @@ function SignUp() {
           <Col md={6} className="d-flex align-items-center justify-content-center">
             <div className="signup-form">
                 <div className=" d-flex align-items-center">
-              <h2 className="signup-title">
-                Hi there! Welcome to
-              </h2>
-              <span className="quickpick-logo">
+                <h2 className="signup-title">
+                Hi there! Welcome back to{' '}
+                <span className="quickpick-logo">
                   <img
                     src={process.env.PUBLIC_URL + '/assets/quickpick-logo.png'}
                     alt="QuickPick Logo"
                     className="inline-logo"
                   />
                 </span>
+              </h2>
                 </div>
               <Form>
                 <Form.Group className="mb-3">
@@ -82,13 +82,13 @@ function SignUp() {
               </Form>
               <div className="separator my-4">or</div>
               <div className="social-login d-flex justify-content-center gap-3 mb-4">
-                <Button variant="outline-dark" className="social-button">
+                <Button variant="outline-dark" className="social-button google">
                   <FaGoogle />
                 </Button>
-                <Button variant="outline-dark" className="social-button">
+                <Button variant="outline-dark" className="social-button facebook">
                   <FaFacebookF />
                 </Button>
-                <Button variant="outline-dark" className="social-button">
+                <Button variant="outline-dark" className="social-button apple">
                   <FaApple />
                 </Button>
               </div>
@@ -104,7 +104,7 @@ function SignUp() {
           {/* Right Side: Image */}
           <Col md={6} className="d-none d-md-block signup-image-col">
             <img
-              src={process.env.PUBLIC_URL + '/assets/login-image.png'}
+              src={process.env.PUBLIC_URL + '/assets/login.png'}
               alt="Groceries"
               className="signup-image"
             />

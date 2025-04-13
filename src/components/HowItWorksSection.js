@@ -88,9 +88,9 @@ function HowItWorksSection() {
         <h2 className="section-title mb-4">How does QuickPick work?</h2>
 
         <Tab.Container activeKey={activeTab} onSelect={(key) => setActiveTab(key)}>
-          <Row className="how-it-works-section">
+          <Row className="how-it-works-section justify-content-center">
             {/* Left Side: Questions (Tabs) */}
-            <Col md={3}>
+            <Col md={9} lg={3}>
               <Nav variant="pills" className="flex-column">
                 <Nav.Item>
                   <Nav.Link eventKey="variant1">How does QuickPick work?</Nav.Link>
@@ -115,9 +115,9 @@ function HowItWorksSection() {
               <Tab.Content>
                 {/* Tab 1: Three Cards */}
                 <Tab.Pane eventKey="variant1">
-                  <Row>
+                  <Row className="justify-content-center">
                     {variants.variant1.cards.map((card, index) => (
-                      <Col md={4} key={index} className="mb-4">
+                      <Col md={10} lg={4} key={index} className="mb-4">
                         <Card className="how-it-works-card">
                           <Card.Title className="card-title">{card.title}</Card.Title>
                           <Card.Img
@@ -137,9 +137,9 @@ function HowItWorksSection() {
 
                 {/* Tab 2: Three Cards */}
                 <Tab.Pane eventKey="variant2">
-                  <Row>
+                  <Row className="justify-content-center">
                     {variants.variant2.cards.map((card, index) => (
-                      <Col md={4} key={index} className="mb-4">
+                      <Col md={10} lg={4} key={index} className="mb-4">
                         <Card className="how-it-works-card">
                           <Card.Title className="card-title">{card.title}</Card.Title>
                           <Card.Img
@@ -159,9 +159,9 @@ function HowItWorksSection() {
 
                 {/* Tab 3: Three Cards */}
                 <Tab.Pane eventKey="variant3">
-                  <Row>
+                  <Row className="justify-content-center">
                     {variants.variant3.cards.map((card, index) => (
-                      <Col md={4} key={index} className="mb-4">
+                      <Col md={10} lg={4} key={index} className="mb-4">
                         <Card className="how-it-works-card">
                           <Card.Title className="card-title">{card.title}</Card.Title>
                           <Card.Img
@@ -184,8 +184,8 @@ function HowItWorksSection() {
                   <Row className="align-items-center">
                     <Col md={12} className="mb-4">
                       <Card className="large-card">
-                        <Card.Body className="d-flex">
-                        <Col md={8} className="mb-4">
+                        <Card.Body className="row">
+                        <Col md={12} lg={8} className="mb-4">
                         <Card.Title className="large-card-title">
                             {variants.variant4.title}
                           </Card.Title>
@@ -193,7 +193,7 @@ function HowItWorksSection() {
                             {variants.variant4.description}
                           </Card.Text>
                         </Col>
-                        <Col md={4} className="mb-4">
+                        <Col md={12} lg={4} className="mb-4">
                         <img
                             src={variants.variant4.image}
                             alt="Discounts"
@@ -213,8 +213,8 @@ function HowItWorksSection() {
                   <Row className="align-items-center">
                     <Col md={12} className="mb-4">
                       <Card className="large-card">
-                        <Card.Body className="d-flex">
-                        <Col md={8} className="mb-4">
+                        <Card.Body className="row">
+                        <Col md={12} lg={8} className="mb-4">
                         <Card.Title className="large-card-title">
                             {variants.variant5.title}
                           </Card.Title>
@@ -222,7 +222,7 @@ function HowItWorksSection() {
                             {variants.variant5.description}
                           </Card.Text>
                         </Col>
-                        <Col md={4} className="mb-4">
+                        <Col md={12} lg={4} className="mb-4">
                         <img
                             src={variants.variant5.image}
                             alt="Discounts"

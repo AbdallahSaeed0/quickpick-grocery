@@ -41,7 +41,7 @@
     color: #60AD4C;
   }
   
-  .add-to-cart-btn {
+  .popular-products .add-to-cart-btn {
     background-color: #28a745 !important;
     border-color: #28a745 !important;
     border-radius: 50%;
@@ -53,7 +53,7 @@
     padding: 0;
   }
   
-  .add-to-cart-btn:hover {
+  .popular-products .add-to-cart-btn:hover {
     background-color: #218838 !important;
     border-color: #218838 !important;
   }
@@ -63,6 +63,9 @@
   }
  .popular-products .card-body{
   background-color: #F5F5F5;
+  }
+  .product-link{
+    text-decoration: none;
   }
   
   /* Responsiveness */
