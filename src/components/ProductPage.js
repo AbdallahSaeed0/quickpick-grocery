@@ -75,7 +75,6 @@ function ProductPage() {
 
   return (
     <div className="product-page">
-      <CustomNavbar />
 
       <Container className="py-5">
         <Row>
@@ -273,7 +272,6 @@ function ProductPage() {
         </Row>
       </Container>
 
-      <FooterSection />
     </div>
   );
 }

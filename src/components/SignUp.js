@@ -1,11 +1,34 @@
-import React from 'react';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import React, { useState, useContext } from 'react';
+import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaGoogle, FaFacebookF, FaApple } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext'; // Import AuthContext
 import '../styles/SignUpPage.css';
 
 function SignUp() {
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState('');
+  const { signup } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      setError('Passwords do not match');
+      return;
+    }
+    const success = signup(fullName, email, password);
+    if (success) {
+      navigate('/'); // Redirect to homepage on successful signup
+    } else {
+      setError('Email already exists');
+    }
+  };
+
   return (
     <div className="signup-page">
       <Container fluid className="h-100">
@@ -13,49 +36,62 @@ function SignUp() {
           {/* Left Side: Sign Up Form */}
           <Col md={6} className="d-flex align-items-center justify-content-center">
             <div className="signup-form">
-                <div className=" d-flex align-items-center">
+              <div className="d-flex align-items-center">
                 <h2 className="signup-title">
-                Hi there! Welcome back to{' '}
-                <span className="quickpick-logo">
-                  <img
-                    src={process.env.PUBLIC_URL + '/assets/quickpick-logo.png'}
-                    alt="QuickPick Logo"
-                    className="inline-logo"
-                  />
-                </span>
-              </h2>
-                </div>
-              <Form>
+                  Hi there! Welcome to{' '}
+                  <span className="quickpick-logo">
+                    <img
+                      src={process.env.PUBLIC_URL + '/assets/quickpick-logo.png'}
+                      alt="QuickPick Logo"
+                      className="inline-logo"
+                    />
+                  </span>
+                </h2>
+              </div>
+              {error && <Alert variant="danger">{error}</Alert>}
+              <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3">
-                    <label>Full Name</label>
+                  <label>Full Name</label>
                   <Form.Control
                     type="text"
                     placeholder="Full Name"
                     className="signup-input"
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                    required
                   />
                 </Form.Group>
                 <Form.Group className="mb-3">
-                <label>E-mail</label>
+                  <label>E-mail</label>
                   <Form.Control
                     type="email"
                     placeholder="E-mail"
                     className="signup-input"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
                   />
                 </Form.Group>
                 <Form.Group className="mb-3">
-                <label>Password</label>
+                  <label>Password</label>
                   <Form.Control
                     type="password"
                     placeholder="Password"
                     className="signup-input"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
                   />
                 </Form.Group>
                 <Form.Group className="mb-3">
-                <label>Confirm Password</label>
+                  <label>Confirm Password</label>
                   <Form.Control
                     type="password"
                     placeholder="Confirm Password"
                     className="signup-input"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    required
                   />
                 </Form.Group>
                 <Form.Group className="mb-3">
@@ -74,6 +110,7 @@ function SignUp() {
                       </span>
                     }
                     className="signup-checkbox"
+                    required
                   />
                 </Form.Group>
                 <Button variant="success" type="submit" className="signup-button w-100">

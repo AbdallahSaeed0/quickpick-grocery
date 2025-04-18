@@ -1,16 +1,15 @@
 import React from 'react';
-import CustomNavbar from '../components/Navbar';
+
 import WishList from '../components/WishList';
-import FooterSection from '../components/FooterSection';
+import BorderHeader from '../components/BorderHeader';
 
 
 function WishListPage() {
   console.log('Home rendering');
   return (
     <div>
-      <CustomNavbar />
+      <BorderHeader />
       <WishList />
-      <FooterSection />
     </div>
   );
 }

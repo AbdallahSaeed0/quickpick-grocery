@@ -1,4 +1,30 @@
-@media (min-width: 1400px) {
+/* src/styles/Main.css */
+body {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  [data-theme="dark"] body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+  }
+  
+  a {
+    color: #28a745;
+  }
+  
+  [data-theme="dark"] a {
+    color: #28a745; /* Keep green for links */
+  }
+  
+  a:hover {
+    color: #218838;
+  }
+  
+  [data-theme="dark"] a:hover {
+    color: #218838;
+  }
+  @media (min-width: 1400px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
         max-width: 1523px;
     }

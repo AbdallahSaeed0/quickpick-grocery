@@ -3,28 +3,44 @@
   background-color: #fff;
 }
 
-.section-title {
+[data-theme="dark"] .categories-section {
+  background-color: #1a1a1a;
+}
+
+.categories-section .section-title {
   font-size: 1.5rem;
   font-weight: bold;
   color: #000;
 }
 
-.see-more-link {
+[data-theme="dark"] .categories-section .section-title {
+  color: #e0e0e0;
+}
+
+.categories-section .see-more-link {
   font-size: 1rem;
   color: #000;
   text-decoration: underline;
   font-weight: 500;
 }
 
-.see-more-link:hover {
+[data-theme="dark"] .categories-section .see-more-link {
+  color: #e0e0e0;
+}
+
+.categories-section .see-more-link:hover {
   color: rgb(146, 92, 5);
 }
 
-.category-slide {
-  padding: 0 10px; /* Padding between slides */
+[data-theme="dark"] .categories-section .see-more-link:hover {
+  color: #e68a00; /* Adjusted for dark mode */
 }
 
-.category-card {
+.categories-section .category-slide {
+  padding: 0 10px;
+}
+
+.categories-section .category-card {
   border: none;
   border-radius: 10px;
   overflow: hidden;
@@ -32,22 +48,30 @@
   transition: transform 0.3s ease;
 }
 
-.category-card:hover {
+[data-theme="dark"] .categories-section .category-card {
+  background-color: #2c2c2c;
+}
+
+.categories-section .category-card:hover {
   transform: translateY(-5px);
 }
 
-.category-image {
+.categories-section .category-image {
   height: 200px;
   object-fit: cover;
 }
 
-.category-name-wrapper {
-  background-color: #ff9900; /* Orange background */
+.categories-section .category-name-wrapper {
+  background-color: #ff9900;
   padding: 10px;
   text-align: center;
 }
 
-.category-name {
+[data-theme="dark"] .categories-section .category-name-wrapper {
+  background-color: #ff9900; /* Keep orange */
+}
+
+.categories-section .category-name {
   font-size: 1rem;
   font-weight: 500;
   color: #fff;
@@ -55,9 +79,12 @@
   text-transform: capitalize;
 }
 
-/* Style the slick slider arrows */
-.slick-prev,
-.slick-next {
+[data-theme="dark"] .categories-section .category-name {
+  color: #fff;
+}
+
+.categories-section .slick-prev,
+.categories-section .slick-next {
   width: 40px;
   height: 40px;
   background-color: rgba(0, 0, 0, 0.5);
@@ -66,143 +93,146 @@
   transition: background-color 0.3s ease;
 }
 
-.slick-prev:hover,
-.slick-next:hover {
-  background-color: rgb(146, 92, 5); /* Match the "See More" link hover color */
+[data-theme="dark"] .categories-section .slick-prev,
+[data-theme="dark"] .categories-section .slick-next {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-.slick-prev {
-  left: -50px; /* Position the left arrow outside the slider */
+.categories-section .slick-prev:hover,
+.categories-section .slick-next:hover {
+  background-color: rgb(146, 92, 5);
 }
 
-.slick-next {
-  right: -50px; /* Position the right arrow outside the slider */
+[data-theme="dark"] .categories-section .slick-prev:hover,
+[data-theme="dark"] .categories-section .slick-next:hover {
+  background-color: #e68a00;
 }
 
-.slick-prev:before,
-.slick-next:before {
+.categories-section .slick-prev {
+  left: -50px;
+}
+
+.categories-section .slick-next {
+  right: -50px;
+}
+
+.categories-section .slick-prev:before,
+.categories-section .slick-next:before {
   font-size: 20px;
   color: #fff;
 }
 
-/* Style the slick slider dots */
-.slick-dots {
+[data-theme="dark"] .categories-section .slick-prev:before,
+[data-theme="dark"] .categories-section .slick-next:before {
+  color: #e0e0e0;
+}
+
+.categories-section .slick-dots {
   margin-top: 20px;
 }
 
-.slick-dots li button:before {
+.categories-section .slick-dots li button:before {
   font-size: 12px;
-  color: #6c757d; /* Gray for inactive dots */
+  color: #6c757d;
 }
 
-.slick-dots li.slick-active button:before {
-  color: rgb(146, 92, 5); /* Match the "See More" link hover color for active dot */
+[data-theme="dark"] .categories-section .slick-dots li button:before {
+  color: #b0b0b0;
+}
+
+.categories-section .slick-dots li.slick-active button:before {
+  color: rgb(146, 92, 5);
+}
+
+[data-theme="dark"] .categories-section .slick-dots li.slick-active button:before {
+  color: #e68a00;
 }
 
 /* Responsiveness */
 @media (max-width: 1200px) {
-  .slick-prev {
+  .categories-section .slick-prev {
     left: -30px;
   }
-
-  .slick-next {
+  .categories-section .slick-next {
     right: -30px;
   }
 }
 
 @media (max-width: 992px) {
-  .section-title {
+  .categories-section .section-title {
     font-size: 1.4rem;
   }
-
-  .category-image {
+  .categories-section .category-image {
     height: 130px;
   }
-
-  .category-name {
+  .categories-section .category-name {
     font-size: 0.9rem;
   }
-
-  .slick-prev,
-  .slick-next {
+  .categories-section .slick-prev,
+  .categories-section .slick-next {
     width: 35px;
     height: 35px;
   }
-
-  .slick-prev {
+  .categories-section .slick-prev {
     left: -20px;
   }
-
-  .slick-next {
+  .categories-section .slick-next {
     right: -20px;
   }
 }
 
 @media (max-width: 768px) {
-  .category-card {
+  .categories-section .category-card {
     margin-bottom: 1rem;
   }
-
-  .category-image {
+  .categories-section .category-image {
     height: 120px;
   }
-
-  .category-name {
+  .categories-section .category-name {
     font-size: 0.9rem;
   }
-
-  .section-title {
+  .categories-section .section-title {
     font-size: 1.2rem;
   }
-
-  .see-more-link {
+  .categories-section .see-more-link {
     font-size: 0.9rem;
   }
-
-  .slick-prev,
-  .slick-next {
+  .categories-section .slick-prev,
+  .categories-section .slick-next {
     width: 30px;
     height: 30px;
   }
-
-  .slick-prev {
+  .categories-section .slick-prev {
     left: -15px;
   }
-
-  .slick-next {
+  .categories-section .slick-next {
     right: -15px;
   }
-
-  .slick-prev:before,
-  .slick-next:before {
+  .categories-section .slick-prev:before,
+  .categories-section .slick-next:before {
     font-size: 16px;
   }
-
-  .slick-dots li button:before {
+  .categories-section .slick-dots li button:before {
     font-size: 10px;
   }
 }
 
 @media (max-width: 576px) {
-  .category-image {
+  .categories-section .category-image {
     height: 100px;
   }
-
-  .category-name {
+  .categories-section .category-name {
     font-size: 0.8rem;
   }
-
-  .slick-prev,
-  .slick-next {
+  .categories-section .slick-prev,
+  .categories-section .slick-next {
     width: 25px;
     height: 25px;
   }
-
-  .slick-prev {
+  .categories-section .slick-prev {
     left: -10px;
   }
-
-  .slick-next {
+  .categories-section .slick-next {
     right: -10px;
   }
 }

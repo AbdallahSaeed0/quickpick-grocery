@@ -1,12 +1,15 @@
 import React from 'react';
+import CategoriesPage from '../components/CategoriesPage';
 
-function Categories() {
+function CategoryPage() {
+  
   return (
     <div>
-      <h1>All Categories</h1>
-      <p>This is the categories page.</p>
+      <CategoriesPage />
+
     </div>
+    
   );
 }
 
-export default Categories;
+export default CategoryPage;

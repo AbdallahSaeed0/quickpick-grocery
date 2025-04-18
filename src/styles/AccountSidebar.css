@@ -1,0 +1,32 @@
+/* src/styles/AccountSidebar.css */
+.account-sidebar .nav-link {
+  background-color: transparent;
+  color: #000;
+  font-size: 1rem;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+}
+
+[data-theme="dark"] .account-sidebar .nav-link {
+  color: #e0e0e0;
+}
+
+.account-sidebar .nav-link.active {
+  background-color: #ff9900;
+  color: #000;
+  border-color: #ff9900;
+}
+
+[data-theme="dark"] .account-sidebar .nav-link.active {
+  background-color: #ff9900;
+  color: #000;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .account-sidebar .nav-link {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}

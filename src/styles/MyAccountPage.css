@@ -1,0 +1,64 @@
+.my-account-page {
+    background-color: #f8f9fa;
+  }
+  
+  .my-account-section {
+    background-color: #fff;
+    padding: 40px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+  }
+  
+  .personal-info {
+    padding: 20px;
+  }
+  
+  .photo-placeholder {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .photo-circle {
+    width: 120px;
+    height: 120px;
+    background-color: #d9d9d9; /* Gray placeholder */
+    border-radius: 50%;
+  }
+  
+  .save-changes-btn {
+    background-color: #28a745; /* Green to match Figma */
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+  
+  .save-changes-btn:hover {
+    background-color: #218838;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .my-account-section {
+      padding: 20px;
+    }
+  
+    .section-title {
+      font-size: 1.5rem;
+    }
+  
+    .photo-circle {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .save-changes-btn {
+      font-size: 0.9rem;
+      padding: 8px 15px;
+    }
+  }

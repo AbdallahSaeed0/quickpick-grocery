@@ -1,5 +1,4 @@
 import React from 'react';
-import CustomNavbar from '../components/Navbar';
 import Banner from '../components/Banner';
 import DealsSection from '../components/DealsSection';
 import PopularProducts from '../components/PopularProducts';
@@ -8,13 +7,11 @@ import PromoSection from '../components/PromoSection';
 import HowItWorksSection from '../components/HowItWorksSection';
 import PromoBannerSection from '../components/PromoBannerSection';
 import CounterSection from '../components/CounterSection';
-import FooterSection from '../components/FooterSection';
 
 function Home() {
   console.log('Home rendering');
   return (
     <div>
-      <CustomNavbar />
       <Banner />
       <DealsSection />
       <PopularProducts />
@@ -23,7 +20,6 @@ function Home() {
       <PromoSection />
       <HowItWorksSection />
       <CounterSection />
-      <FooterSection />
     </div>
   );
 }

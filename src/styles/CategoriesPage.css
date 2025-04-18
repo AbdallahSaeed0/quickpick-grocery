@@ -1,0 +1,111 @@
+/* src/styles/CategoriesPage.css */
+.categories-page {
+  background-color: #f8f9fa;
+}
+
+[data-theme="dark"] .categories-page {
+  background-color: #1a1a1a;
+}
+
+.categories-page .categories-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+[data-theme="dark"] .categories-page .categories-title {
+  color: #e0e0e0;
+}
+
+.categories-page .search-bar {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  padding: 8px 15px;
+  font-size: 1rem;
+  border: 1px solid #dee2e6;
+}
+
+[data-theme="dark"] .categories-page .search-bar {
+  border-color: #444;
+  background-color: #2c2c2c;
+  color: #e0e0e0;
+}
+
+.categories-page .nav-tabs {
+  border-bottom: 2px solid #dee2e6;
+}
+
+[data-theme="dark"] .categories-page .nav-tabs {
+  border-color: #444;
+}
+
+.categories-page .nav-tabs .nav-link {
+  font-size: 1rem;
+  color: #333;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-right: 20px;
+  padding: 8px 0;
+}
+
+[data-theme="dark"] .categories-page .nav-tabs .nav-link {
+  color: #e0e0e0;
+}
+
+.categories-page .nav-tabs .nav-link.active {
+  color: #28a745;
+  border-bottom: 2px solid #28a745;
+}
+
+[data-theme="dark"] .categories-page .nav-tabs .nav-link.active {
+  color: #28a745; /* Keep green */
+}
+
+.categories-page .nav-tabs .nav-link:hover {
+  color: #28a745;
+  border-bottom: 2px solid #28a745;
+}
+
+[data-theme="dark"] .categories-page .nav-tabs .nav-link:hover {
+  color: #28a745;
+}
+
+.categories-page .category-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+[data-theme="dark"] .categories-page .category-link {
+  color: #e0e0e0;
+}
+
+.categories-page .category-card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+[data-theme="dark"] .categories-page .category-card {
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+.categories-page .category-card:hover {
+  transform: translateY(-5px);
+}
+
+.categories-page .category-image {
+  height: 150px;
+  object-fit: cover;
+}
+
+.categories-page .category-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+[data-theme="dark"] .categories-page .category-name {
+  color: #e0e0e0;
+}

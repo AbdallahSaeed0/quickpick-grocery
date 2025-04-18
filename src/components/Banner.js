@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, InputGroup } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/Banner.css';
 
 function Banner() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate();
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (searchTerm.trim()) {
+      navigate('/search', { state: { searchTerm, fromSearch: true } });
+    } else {
+      navigate('/search'); // Navigate without search term if empty
+    }
+  };
+
   return (
     <div className="banner-section d-flex align-items-center container">
       <Container className="p-0">
@@ -14,16 +31,18 @@ function Banner() {
               Make healthy life with <span className="text-success">Fresh Grocery.</span> Product.
             </h1>
             <p className="banner-subtitle">
-              Enter a postcode to see what we deliver
+              Enter a product name to see what we deliver
             </p>
-            <Form>
+            <Form onSubmit={handleSearchSubmit}>
               <InputGroup className="custom-input-group">
                 <Form.Control
                   type="text"
-                  placeholder="e.g. EC4R 3TE"
+                  placeholder="Search for products"
+                  value={searchTerm}
+                  onChange={handleSearchChange}
                   className="custom-input"
                 />
-                <Button variant="success" className="custom-button">
+                <Button type="submit" variant="success" className="custom-button">
                   Search
                 </Button>
               </InputGroup>

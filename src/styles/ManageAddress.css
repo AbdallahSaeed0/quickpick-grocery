@@ -1,0 +1,187 @@
+/* src/styles/ManageAddress.css */
+.saved-addresses h4,
+.new-address h4,
+.edit-address h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+[data-theme="dark"] .saved-addresses h4,
+[data-theme="dark"] .new-address h4,
+[data-theme="dark"] .edit-address h4 {
+  color: #e0e0e0;
+}
+
+.address-card {
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+}
+
+[data-theme="dark"] .address-card {
+  border-color: #444;
+  background-color: #2c2c2c;
+}
+
+.address-card .form-control,
+.address-card .form-check {
+  pointer-events: none; /* Disable interaction for read-only fields */
+}
+
+.address-card .btn-outline-success {
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+[data-theme="dark"] .address-card .btn-outline-success {
+  border-color: #28a745;
+  color: #28a745;
+}
+
+.address-card .btn-outline-success:hover {
+  background-color: #28a745;
+  color: #fff;
+}
+
+[data-theme="dark"] .address-card .btn-outline-success:hover {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.new-address .map-placeholder,
+.edit-address .map-placeholder {
+  height: 150px;
+  background-color: #f5e6cc; /* Beige for map */
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+[data-theme="dark"] .new-address .map-placeholder,
+[data-theme="dark"] .edit-address .map-placeholder {
+  background-color: #3a3a3a;
+}
+
+.new-address .map-image,
+.edit-address .map-image {
+  width: 100%;
+  height: 100%;
+  background: url('../../public/assets/map-placeholder.jpg') center/cover no-repeat; /* Optional: add real image */
+}
+
+.new-address .address-type,
+.edit-address .address-type {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.new-address .type-button,
+.edit-address .type-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 20px;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+}
+
+.new-address .type-button svg,
+.edit-address .type-button svg {
+  font-size: 1.2rem;
+}
+
+.new-address .type-button.btn-success,
+.edit-address .type-button.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+  color: #fff;
+}
+
+[data-theme="dark"] .new-address .type-button.btn-outline-success,
+[data-theme="dark"] .edit-address .type-button.btn-outline-success {
+  border-color: #28a745;
+  color: #28a745;
+}
+
+[data-theme="dark"] .new-address .type-button.btn-success,
+[data-theme="dark"] .edit-address .type-button.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.new-address .form-control,
+.edit-address .form-control,
+.saved-addresses .form-control {
+  border-radius: 10px;
+  border: 1px solid #28a745;
+}
+
+[data-theme="dark"] .new-address .form-control,
+[data-theme="dark"] .edit-address .form-control,
+[data-theme="dark"] .saved-addresses .form-control {
+  background-color: #2c2c2c;
+  color: #e0e0e0;
+  border-color: #28a745;
+}
+
+.new-address .form-check-input,
+.edit-address .form-check-input {
+  border-color: #28a745;
+}
+
+[data-theme="dark"] .new-address .form-check-input,
+[data-theme="dark"] .edit-address .form-check-input {
+  border-color: #28a745;
+  background-color: #2c2c2c;
+}
+
+.new-address .btn-success,
+.edit-address .btn-success,
+.saved-addresses .btn-success {
+  border-radius: 20px;
+  padding: 8px 20px;
+}
+
+.new-address .btn-outline-secondary,
+.edit-address .btn-outline-secondary {
+  border-radius: 20px;
+  padding: 8px 20px;
+}
+
+[data-theme="dark"] .new-address .btn-outline-secondary,
+[data-theme="dark"] .edit-address .btn-outline-secondary {
+  border-color: #444;
+  color: #e0e0e0;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .saved-addresses h4,
+  .new-address h4,
+  .edit-address h4 {
+    font-size: 1.2rem;
+  }
+  .new-address .map-placeholder,
+  .edit-address .map-placeholder {
+    height: 100px;
+  }
+  .new-address .type-button,
+  .edit-address .type-button {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+  .new-address .type-button svg,
+  .edit-address .type-button svg {
+    font-size: 1rem;
+  }
+  .address-card .btn-outline-success {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+  }
+}

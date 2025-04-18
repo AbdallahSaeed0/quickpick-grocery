@@ -1,11 +1,28 @@
-import React from 'react';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import React, { useState, useContext } from 'react';
+import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaGoogle, FaFacebookF, FaApple } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext'; // Import AuthContext
 import '../styles/LoginPage.css';
 
 function LoginPage() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const success = login(email, password);
+    if (success) {
+      navigate('/'); // Redirect to homepage on successful login
+    } else {
+      setError('Invalid email or password');
+    }
+  };
+
   return (
     <div className="login-page">
       <Container fluid className="h-100">
@@ -23,12 +40,16 @@ function LoginPage() {
                   />
                 </span>
               </h2>
-              <Form>
+              {error && <Alert variant="danger">{error}</Alert>}
+              <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3">
                   <Form.Control
                     type="email"
                     placeholder="E-mail"
                     className="login-input"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
                   />
                 </Form.Group>
                 <Form.Group className="mb-3">
@@ -36,6 +57,9 @@ function LoginPage() {
                     type="password"
                     placeholder="Password"
                     className="login-input"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
                   />
                 </Form.Group>
                 <div className="text-end mb-3">
