@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/OffersPage.css';
 import { useSearch } from '../context/SearchContext';
+import { CartContext } from '../context/CartContext';
 
 function OffersPage() {
   const { parsedProducts } = useSearch();
+  const { addToCart } = useContext(CartContext); // Add CartContext
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
 
-  // Use full product list (no filtering on OffersPage)
   const productsSection1 = parsedProducts.slice(0, 4);
   const productsSection2 = parsedProducts.slice(4, 8);
   const productsSection3 = parsedProducts.slice(8, 12);
@@ -24,14 +25,13 @@ function OffersPage() {
     if (searchTerm.trim()) {
       navigate('/search', { state: { searchTerm, fromSearch: true } });
     } else {
-      navigate('/search'); // Navigate without search term if empty
+      navigate('/search');
     }
   };
 
   return (
     <div className="offers-page">
       <Container className="py-5">
-        {/* Search Bar with Button */}
         <Form onSubmit={handleSearchSubmit} className="search-form mb-5">
           <Row className="justify-content-center">
             <Col xs={12} md={6} lg={5}>
@@ -51,7 +51,6 @@ function OffersPage() {
           </Row>
         </Form>
 
-        {/* First Banner */}
         <Row className="banner banner-1 mb-5 align-items-center">
           <Col md={6}>
             <h2 className="banner-title">Save Up to 60% Off the Grocery Deals!</h2>
@@ -66,7 +65,6 @@ function OffersPage() {
           </Col>
         </Row>
 
-        {/* First Products Section */}
         <h3 className="section-title mb-4">View Products</h3>
         <Row className="mb-5">
           {productsSection1.length > 0 ? (
@@ -85,6 +83,15 @@ function OffersPage() {
                       <Card.Text className="product-price">
                         EGP {product.price.toFixed(2)}
                       </Card.Text>
+                      <Button
+                        className="add-to-cart-btn"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          addToCart(product, 1);
+                        }}
+                      >
+                        Add to Cart
+                      </Button>
                     </Card.Body>
                   </Card>
                 </Link>
@@ -97,7 +104,6 @@ function OffersPage() {
           )}
         </Row>
 
-        {/* Second Banner */}
         <Row className="banner banner-2 mb-5 align-items-center">
           <Col md={6}>
             <h2 className="banner-title">A Sparkling Homeware Deal!</h2>
@@ -112,7 +118,6 @@ function OffersPage() {
           </Col>
         </Row>
 
-        {/* Second Products Section */}
         <h3 className="section-title mb-4">View Products</h3>
         <Row className="mb-5">
           {productsSection2.length > 0 ? (
@@ -131,6 +136,15 @@ function OffersPage() {
                       <Card.Text className="product-price">
                         EGP {product.price.toFixed(2)}
                       </Card.Text>
+                      <Button
+                        className="add-to-cart-btn"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          addToCart(product, 1);
+                        }}
+                      >
+                        Add to Cart
+                      </Button>
                     </Card.Body>
                   </Card>
                 </Link>
@@ -143,7 +157,6 @@ function OffersPage() {
           )}
         </Row>
 
-        {/* Third Banner */}
         <Row className="banner banner-3 mb-5 align-items-center">
           <Col md={6}>
             <h2 className="banner-title">Glow with Unstoppable Beauty!</h2>
@@ -158,7 +171,6 @@ function OffersPage() {
           </Col>
         </Row>
 
-        {/* Third Products Section */}
         <h3 className="section-title mb-4">View Products</h3>
         <Row className="mb-5">
           {productsSection3.length > 0 ? (
@@ -177,6 +189,15 @@ function OffersPage() {
                       <Card.Text className="product-price">
                         EGP {product.price.toFixed(2)}
                       </Card.Text>
+                      <Button
+                        className="add-to-cart-btn"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          addToCart(product, 1);
+                        }}
+                      >
+                        Add to Cart
+                      </Button>
                     </Card.Body>
                   </Card>
                 </Link>

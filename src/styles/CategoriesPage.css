@@ -59,7 +59,8 @@
 }
 
 [data-theme="dark"] .categories-page .nav-tabs .nav-link.active {
-  color: #28a745; /* Keep green */
+  color: #28a745;
+  background-color: transparent;
 }
 
 .categories-page .nav-tabs .nav-link:hover {
@@ -107,5 +108,5 @@
 }
 
 [data-theme="dark"] .categories-page .category-name {
-  color: #e0e0e0;
+  color: #000;
 }

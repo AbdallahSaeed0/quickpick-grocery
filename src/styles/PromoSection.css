@@ -33,9 +33,6 @@
   z-index: 0;
 }
 
-[data-theme="dark"] .promo-card::before {
-  background: linear-gradient(245.7deg, rgba(255, 255, 255, 0) 0.94%, rgba(255, 255, 255, 0.19) 51.68%, rgba(255, 255, 255, 0.5) 87.9%);
-}
 
 .promo-card > * {
   position: relative;
@@ -67,7 +64,7 @@
 }
 
 [data-theme="dark"] .promo-title {
-  color: #e0e0e0;
+  color: #fff;
 }
 
 .promo-button {

@@ -12,18 +12,35 @@ body {
   a {
     color: #28a745;
   }
-  
-  [data-theme="dark"] a {
-    color: #28a745; /* Keep green for links */
-  }
-  
+
   a:hover {
     color: #218838;
   }
-  
-  [data-theme="dark"] a:hover {
-    color: #218838;
+  label{
+    color: #000; 
   }
+  [data-theme="dark"] label {
+    color: #fff; 
+  }
+  input::placeholder,
+textarea::placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+  color: #fff !important; 
+  opacity: 1;
+}
+ 
+
+
+[data-theme="dark"] .form-control{
+  background-color: #000;
+  color: #fff;
+}
   @media (min-width: 1400px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
         max-width: 1523px;

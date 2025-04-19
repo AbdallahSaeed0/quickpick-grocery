@@ -38,6 +38,7 @@
 
 [data-theme="dark"] .my-orders .nav-link.active {
   color: #28a745;
+  background-color: transparent
 }
 
 .order-item {
@@ -123,6 +124,7 @@
 
 [data-theme="dark"] .order-dropdown-icon {
   background-color: #ff9900;
+  color: #fff; /* Ensure icon stays white */
 }
 
 /* Button styling */
@@ -130,6 +132,8 @@
   border-radius: 20px;
   padding: 5px 15px;
   font-size: 0.9rem;
+  color: #28a745;
+  border-color: #28a745;
 }
 
 [data-theme="dark"] .order-item .btn-outline-success {

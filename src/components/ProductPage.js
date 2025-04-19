@@ -1,60 +1,53 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Card, Button, Form, InputGroup } from 'react-bootstrap';
+import React, { useState, useEffect, useContext } from 'react';
+import { Container, Row, Col, Card, Form, Button, InputGroup } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useParams, Link } from 'react-router-dom';
-import { FaHeart, FaStar, FaChevronLeft, FaChevronRight } from 'react-icons/fa'; // Import arrow icons
-import CustomNavbar from './Navbar'; // Adjusted import path
-import FooterSection from './FooterSection'; // Adjusted import path
-import productData from '../data/products.json'; // Import the JSON file
+import { FaHeart, FaStar, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import productData from '../data/products.json';
 import '../styles/ProductPage.css';
+import { CartContext } from '../context/CartContext';
 
 function ProductPage() {
-  const { id } = useParams(); // Get the product ID from the URL
+  const { id } = useParams();
+  const { addToCart } = useContext(CartContext); // Add CartContext
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [relatedProducts, setRelatedProducts] = useState([]);
-  const [currentImage, setCurrentImage] = useState(null); // Track the current main image
-  const [currentIndex, setCurrentIndex] = useState(0); // Track the current thumbnail index
+  const [currentImage, setCurrentImage] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    // Find the product by ID
     const foundProduct = productData.find((p) => p.id === parseInt(id));
     setProduct(foundProduct);
 
-    // Set the initial main image
     if (foundProduct) {
       setCurrentImage(process.env.PUBLIC_URL + foundProduct.image);
-      // Find related products (same category, excluding the current product)
       const related = productData
         .filter((p) => p.category === foundProduct.category && p.id !== foundProduct.id)
-        .slice(0, 4); // Limit to 4 related products
+        .slice(0, 4);
       setRelatedProducts(related);
     }
   }, [id]);
 
-  // Array of thumbnail images for the product
   const thumbnails = product
     ? [
         process.env.PUBLIC_URL + product.image,
-        process.env.PUBLIC_URL + (product.image2 || product.image), // Use image2 if available, fallback to image
+        process.env.PUBLIC_URL + (product.image2 || product.image),
         process.env.PUBLIC_URL + product.image,
       ]
     : [];
 
-  // Handle thumbnail click to update the main image
   const handleThumbnailClick = (image, index) => {
     setCurrentImage(image);
     setCurrentIndex(index);
   };
 
-  // Handle sliding to the previous thumbnail
   const handlePrevClick = () => {
     const newIndex = currentIndex === 0 ? thumbnails.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
     setCurrentImage(thumbnails[newIndex]);
   };
 
-  // Handle sliding to the next thumbnail
   const handleNextClick = () => {
     const newIndex = currentIndex === thumbnails.length - 1 ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
@@ -62,11 +55,16 @@ function ProductPage() {
   };
 
   const handleAddToCart = () => {
-    console.log(`Added ${quantity} of ${product?.name} to cart!`);
+    if (product) {
+      addToCart(product, quantity);
+    }
   };
 
   const handleBuyNow = () => {
-    console.log(`Proceeding to buy ${quantity} of ${product?.name} now!`);
+    if (product) {
+      addToCart(product, quantity);
+      window.location.href = '/cart'; // Redirect to cart page
+    }
   };
 
   if (!product) {
@@ -75,10 +73,8 @@ function ProductPage() {
 
   return (
     <div className="product-page">
-
       <Container className="py-5">
         <Row>
-          {/* Left Side: Product Image and Thumbnails */}
           <Col md={5}>
             <div className="main-image-container">
               <img
@@ -86,7 +82,6 @@ function ProductPage() {
                 alt={product.name}
                 className="main-product-image"
               />
-              {/* Arrow buttons for sliding */}
               <Button
                 variant="light"
                 className="carousel-arrow carousel-arrow-left"
@@ -115,7 +110,6 @@ function ProductPage() {
             </div>
           </Col>
 
-          {/* Right Side: Product Details */}
           <Col md={7}>
             <div className="d-flex justify-content-between align-items-center mb-3">
               <h1 className="product-title">{product.name}</h1>
@@ -144,7 +138,7 @@ function ProductPage() {
               </Button>
               <Form.Control
                 value={quantity}
-                onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value)))}
+                onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
                 className="text-center"
               />
               <Button
@@ -173,7 +167,6 @@ function ProductPage() {
           </Col>
         </Row>
 
-        {/* Product Description */}
         <Row className="mt-5">
           <Col>
             <h2 className="section-title">Product Description</h2>
@@ -190,7 +183,6 @@ function ProductPage() {
           </Col>
         </Row>
 
-        {/* Related Products */}
         <Row className="mt-5">
           <Col>
             <h2 className="section-title">Related Products</h2>
@@ -213,6 +205,15 @@ function ProductPage() {
                       <Card.Text className="related-product-price">
                         EGP {parseFloat(relatedProduct.price).toFixed(2)}
                       </Card.Text>
+                      <Button
+                        className="add-to-cart-btn"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          addToCart(relatedProduct, 1);
+                        }}
+                      >
+                        Add to Cart
+                      </Button>
                     </Card.Body>
                   </Card>
                 </Col>
@@ -221,7 +222,6 @@ function ProductPage() {
           </Col>
         </Row>
 
-        {/* Reviews Section */}
         <Row className="mt-5">
           <Col>
             <h2 className="section-title">Reviews</h2>
@@ -247,7 +247,6 @@ function ProductPage() {
               </Card.Body>
             </Card>
 
-            {/* Add a Review Form */}
             <h3 className="add-review-title">Add a Review</h3>
             <Form>
               <Form.Group className="mb-3">
@@ -271,7 +270,6 @@ function ProductPage() {
           </Col>
         </Row>
       </Container>
-
     </div>
   );
 }

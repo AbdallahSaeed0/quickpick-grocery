@@ -1,0 +1,180 @@
+/* src/styles/Checkout.css */
+.checkout-page {
+    background-color: #fff;
+  }
+  
+  [data-theme="dark"] .checkout-page {
+    background-color: #1a1a1a;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  [data-theme="dark"] .section-title {
+    color: #e0e0e0;
+  }
+  
+  .checkout-page .form-control {
+    border-radius: 20px;
+    border: 1px solid #28a745;
+    background-color: #fff;
+    padding: 10px;
+    color: #333;
+  }
+  
+  [data-theme="dark"] .checkout-page .form-control {
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+    border-color: #28a745;
+  }
+  
+  .checkout-page .form-check-label {
+    color: #333;
+  }
+  
+  [data-theme="dark"] .checkout-page .form-check-label {
+    color: #e0e0e0;
+  }
+  
+  .checkout-page .form-check-input {
+    border-color: #28a745;
+    background-color: #fff;
+  }
+  
+  [data-theme="dark"] .checkout-page .form-check-input {
+    border-color: #28a745;
+    background-color: #2c2c2c;
+  }
+  
+  /* Ensure radio inputs show a visible check */
+  .checkout-page .form-check-input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #28a745;
+    background-color: #fff;
+  }
+  
+  [data-theme="dark"] .checkout-page .form-check-input[type="radio"] {
+    background-color: #2c2c2c;
+  }
+  
+  .checkout-page .form-check-input[type="radio"]:checked {
+    background-color: #28a745;
+    border-color: #28a745;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+  }
+  
+  .payment-method-card {
+    border: none;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+  }
+  
+  [data-theme="dark"] .payment-method-card {
+    background-color: #2c2c2c;
+  }
+  
+  .payment-note {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  [data-theme="dark"] .payment-note {
+    color: #b0b0b0;
+  }
+  
+  .payment-method-card .btn-outline-secondary {
+    border-radius: 20px;
+    padding: 8px 20px;
+    color: #333;
+    border-color: #28a745;
+  }
+  
+  [data-theme="dark"] .payment-method-card .btn-outline-secondary {
+    border-color: #28a745;
+    color: #e0e0e0;
+  }
+  
+  .order-summary {
+    border: none;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+  }
+  
+  [data-theme="dark"] .order-summary {
+    background-color: #2c2c2c;
+  }
+  
+  .summary-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  [data-theme="dark"] .summary-title {
+    color: #e0e0e0;
+  }
+  
+  .summary-details {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  [data-theme="dark"] .summary-details {
+    color: #b0b0b0;
+  }
+  
+  .summary-details hr {
+    border-color: #ff9900;
+  }
+  
+  [data-theme="dark"] .summary-details hr {
+    border-color: #ff9900;
+  }
+  
+  .summary-total {
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  [data-theme="dark"] .summary-total {
+    color: #e0e0e0;
+  }
+  
+  .proceed-btn {
+    border-radius: 20px;
+    background-color: #28a745;
+    border: none;
+  }
+  
+  [data-theme="dark"] .proceed-btn {
+    background-color: #28a745;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 1.2rem;
+    }
+  
+    .summary-title {
+      font-size: 1rem;
+    }
+  
+    .summary-details,
+    .summary-total {
+      font-size: 0.9rem;
+    }
+  
+    .payment-note {
+      font-size: 0.8rem;
+    }
+  
+    .proceed-btn {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  }

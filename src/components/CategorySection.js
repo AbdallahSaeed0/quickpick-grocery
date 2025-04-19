@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 import { useParams, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -6,9 +6,11 @@ import productData from '../data/products.json';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import '../styles/CategorySection.css';
+import { CartContext } from '../context/CartContext';
 
 function CategorySection() {
   const { id } = useParams();
+  const { addToCart } = useContext(CartContext); // Add CartContext
 
   const categories = [
     { id: 1, name: 'Fruits and Vegetables' },
@@ -108,13 +110,12 @@ function CategorySection() {
 
   const handleSortChange = (e) => {
     setSortOption(e.target.value);
-    applyFilters(); // Reapply filters with new sort option
+    applyFilters();
   };
 
   return (
     <div className="category-page">
       <Container className="py-5">
-        {/* Breadcrumb */}
         <div className="breadcrumb mb-2">
           <Link to="/categories" className="breadcrumb-link">
             Categories
@@ -124,7 +125,6 @@ function CategorySection() {
         </div>
 
         <Row>
-          {/* Left Sidebar: Filters */}
           <Col md={3} className="mb-4">
             <h3 className="filter-title">Filter By</h3>
             <div className="filter-buttons mb-3">
@@ -172,7 +172,6 @@ function CategorySection() {
               </Button>
             </div>
 
-            {/* Price Range */}
             <div className="mb-3">
               <Form.Label>Price Range</Form.Label>
               <div className="d-flex justify-content-between mb-2">
@@ -221,7 +220,6 @@ function CategorySection() {
             </Button>
           </Col>
 
-          {/* Main Content: Products */}
           <Col md={9}>
             <h2 className="category-title mb-3">{categoryName}</h2>
             <div className="d-flex justify-content-between align-items-center mb-4">
@@ -255,6 +253,15 @@ function CategorySection() {
                           <Card.Text className="product-price">
                             {parseFloat(product.price).toFixed(2)} EGP
                           </Card.Text>
+                          <Button
+                            className="add-to-cart-btn"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              addToCart(product, 1);
+                            }}
+                          >
+                            Add to Cart
+                          </Button>
                         </Card.Body>
                       </Card>
                     </Link>

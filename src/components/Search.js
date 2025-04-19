@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Container, Row, Col, Form, Button, Card, Dropdown, Pagination, Carousel } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/SearchPage.css';
 import { useSearch } from '../context/SearchContext';
+import { CartContext } from '../context/CartContext';
 
 function Search() {
   const { parsedProducts } = useSearch();
+  const { addToCart } = useContext(CartContext); // Add CartContext
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [sortOption, setSortOption] = useState('Best Selling');
@@ -14,23 +16,20 @@ function Search() {
   const productsPerPage = 16;
   const location = useLocation();
 
-  // Initialize searchTerm from navigation state if provided
   useEffect(() => {
     if (location.state?.fromSearch && location.state?.searchTerm) {
       setSearchTerm(location.state.searchTerm);
     } else {
-      setSearchTerm(''); // Clear search term for direct navigation
+      setSearchTerm('');
       setCurrentPage(1);
     }
   }, [location]);
 
-  // Extract unique categories
   const categories = [
     'All',
     ...new Set(parsedProducts.map((product) => product.category)),
   ];
 
-  // Filter products based on search term and category
   const filteredProducts = parsedProducts.filter((product) => {
     const matchesSearch = product.name
       .toLowerCase()
@@ -40,7 +39,6 @@ function Search() {
     return matchesSearch && matchesCategory;
   });
 
-  // Sort products based on selected option
   const sortedProducts = [...filteredProducts].sort((a, b) => {
     switch (sortOption) {
       case 'Price Low to High':
@@ -49,11 +47,10 @@ function Search() {
         return b.price - a.price;
       case 'Best Selling':
       default:
-        return 0; // No sorting for Best Selling (use original order)
+        return 0;
     }
   });
 
-  // Pagination logic
   const totalPages = Math.ceil(sortedProducts.length / productsPerPage);
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
@@ -64,29 +61,28 @@ function Search() {
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
-    setCurrentPage(1); // Reset to page 1 when search term changes
+    setCurrentPage(1);
   };
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    setCurrentPage(1); // Reset to page 1 on submit
+    setCurrentPage(1);
   };
 
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
-    setCurrentPage(1); // Reset to page 1 when category changes
+    setCurrentPage(1);
   };
 
   const handleSortSelect = (option) => {
     setSortOption(option);
-    setCurrentPage(1); // Reset to page 1 when sort option changes
+    setCurrentPage(1);
   };
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
-  // Slider data
   const slides = [
     {
       image: `${process.env.PUBLIC_URL}/assets/offer-banner3.jpeg`,
@@ -114,7 +110,6 @@ function Search() {
   return (
     <div className="search-page">
       <Container className="py-5">
-        {/* Search Bar with Button */}
         <Form onSubmit={handleSearchSubmit} className="search-form mb-4">
           <Row className="justify-content-center">
             <Col xs={12} md={6} lg={5}>
@@ -134,7 +129,6 @@ function Search() {
           </Row>
         </Form>
 
-        {/* Slider */}
         <Row className="mb-5">
           <Col>
             <Carousel className="custom-carousel">
@@ -166,10 +160,8 @@ function Search() {
           </Col>
         </Row>
 
-        {/* Filters and Products */}
         <Row>
           <Col>
-            {/* Filters */}
             <Row className="mb-4 align-items-center">
               <Col md={6} className="mb-2 mb-md-0">
                 <Dropdown onSelect={handleCategorySelect}>
@@ -208,7 +200,6 @@ function Search() {
               </Col>
             </Row>
 
-            {/* Products Grid */}
             <Row>
               {currentProducts.length > 0 ? (
                 currentProducts.map((product) => (
@@ -228,7 +219,15 @@ function Search() {
                           <Card.Text className="product-price">
                             EGP {product.price.toFixed(2)}
                           </Card.Text>
-                          <Button className="add-to-cart-btn">Add to cart</Button>
+                          <Button
+                            className="add-to-cart-btn"
+                            onClick={(e) => {
+                              e.preventDefault(); // Prevent Link navigation
+                              addToCart(product, 1);
+                            }}
+                          >
+                            Add to cart
+                          </Button>
                         </Card.Body>
                       </Card>
                     </Link>
@@ -241,7 +240,6 @@ function Search() {
               )}
             </Row>
 
-            {/* Pagination */}
             {totalPages > 1 && (
               <Row className="mt-4">
                 <Col className="text-center">

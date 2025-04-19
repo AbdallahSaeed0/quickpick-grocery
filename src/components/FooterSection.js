@@ -107,7 +107,6 @@ function FooterSection() {
             <Col md={6} className="bottom-right">
                 <a href="#" className="bottom-link">Privacy Policy</a>
                 <a href="#" className="bottom-link">Terms</a>
-                <a href="#" className="bottom-link">Pricing</a>
                 <a href="#" className="bottom-link">Do not sell or share my personal information</a>
             </Col>
             </Row>

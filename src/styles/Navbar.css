@@ -16,7 +16,7 @@
 }
 
 .top-bar a {
-  color: #FC8A06 !important;
+  color: #FC8A06;
 }
 
 [data-theme="dark"] .top-bar a {
@@ -49,6 +49,13 @@ div {
 
 [data-theme="dark"] .top-bar .text-warning {
   color: #FC8A06 !important; /* Keep orange */
+}
+
+.header-text{
+  color: #000; 
+}
+[data-theme="dark"] .header-text{
+  color: #fff;
 }
 
 .cart-section {
@@ -129,16 +136,16 @@ div {
   color: #e0e0e0;
 }
 
-.navbar .btn-warning {
+.navbar-nav .nav-link.active {
   background-color: #FC8A06 !important;
-  border-color: #FC8A06 !important;
-  padding: 5px 15px;
+  color: #fff !important;
   border-radius: 50px !important;
+  padding: 5px 15px !important; /* Match previous btn-warning padding */
 }
 
-[data-theme="dark"] .navbar .btn-warning {
+[data-theme="dark"] .navbar-nav .nav-link.active {
   background-color: #FC8A06 !important;
-  border-color: #FC8A06 !important;
+  color: #fff !important;
 }
 
 .btn-success {
@@ -161,17 +168,10 @@ div {
   background-color: #218838 !important;
 }
 
-.navbar .btn-warning:hover {
-  color: #fff !important;
-}
-
 .navbar-brand img {
   height: 40px;
 }
 
-[data-theme="dark"] .navbar-brand img {
-  filter: invert(100%) brightness(200%); /* Invert logo to white */
-}
 
 .navbar-nav .nav-link {
   padding: 8px 20px !important;
@@ -231,6 +231,88 @@ div {
 
 [data-theme="dark"] .theme-toggle-btn {
   color: #e0e0e0;
+}
+
+/* Adjustments for the new icons section */
+.cart-section {
+  background-color: #60AD4C;
+  border-radius: 0 0 12px 12px;
+}
+
+[data-theme="dark"] .cart-section {
+  background-color: #60AD4C; /* Keep green */
+}
+
+.cart-section .row {
+  justify-content: center;
+}
+
+.first-section,
+.second-section,
+.third-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+  border-right: 1px solid #ffffff40;
+}
+
+[data-theme="dark"] .first-section,
+[data-theme="dark"] .second-section,
+[data-theme="dark"] .third-section {
+  border-color: #ffffff80;
+}
+
+.third-section {
+  border-right: none; /* Remove border on the last icon */
+}
+
+.theme-toggle-btn-icon {
+  padding: 0;
+  font-size: 24px;
+  color: #fff;
+}
+
+[data-theme="dark"] .theme-toggle-btn-icon {
+  color: #fff;
+}
+
+.wishlist-icon-link {
+  color: #fff !important;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+[data-theme="dark"] .wishlist-icon-link {
+  color: #fff;
+}
+
+.wishlist-icon-link:hover {
+  color: #dc3545; /* Red heart on hover */
+}
+
+.bi-translate {
+  font-size: 24px; /* Adjusted size to match other icons */
+  color: #fff;
+}
+
+[data-theme="dark"] .bi-translate {
+  color: #fff;
+}
+
+/* Responsiveness */
+@media (max-width: 576px) {
+  .first-section,
+  .second-section,
+  .third-section {
+    padding: 10px 0;
+  }
+
+  .theme-toggle-btn-icon,
+  .wishlist-icon-link,
+  .bi-translate {
+    font-size: 20px;
+  }
 }
 
 /* Responsiveness */

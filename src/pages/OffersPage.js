@@ -9,7 +9,6 @@ function CategoryPage() {
     <div>
       <Offers />
       <CounterSection />
-
     </div>
     
   );

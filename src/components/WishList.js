@@ -1,35 +1,34 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { FaChevronRight } from 'react-icons/fa';
-import productData from '../data/products.json'; // Import products.json
+import productData from '../data/products.json';
 import '../styles/WishList.css';
+import { CartContext } from '../context/CartContext';
 
-// Simulated list of product IDs in the wishlist (replace with actual wishlist data from your backend or state management)
-const wishlistProductIds = [1, 2, 3, 4, 5]; // First 5 products for testing
+const wishlistProductIds = [1, 2, 3, 4, 5];
 
-// Map the wishlist product IDs to full product data from products.json
 const wishlistItems = wishlistProductIds.map((id) => {
   const product = productData.find((p) => p.id === id);
-  if (!product) return null; // Skip if product not found
+  if (!product) return null;
 
   return {
     id: product.id,
     name: product.name,
-    brand: 'QuickPick Brand', // Placeholder, as brand is not in products.json
-    price: `${parseFloat(product.price).toFixed(2)} EGP`, // Format price
-    originalPrice: `${(parseFloat(product.price) + 20).toFixed(2)} EGP`, // Placeholder: add 20 LE as original price
-    stockStatus: id % 2 === 0 ? 'Low Stock' : 'In Stock', // Placeholder: alternate between "In Stock" and "Low Stock"
-    savedTime: '3 days ago', // Placeholder
-    image: product.image, // Use the product image
+    brand: 'QuickPick Brand',
+    price: `${parseFloat(product.price).toFixed(2)} EGP`,
+    originalPrice: `${(parseFloat(product.price) + 20).toFixed(2)} EGP`,
+    stockStatus: id % 2 === 0 ? 'Low Stock' : 'In Stock',
+    savedTime: '3 days ago',
+    image: product.image,
   };
-}).filter((item) => item !== null); // Filter out any null items
+}).filter((item) => item !== null);
 
 function Wishlist() {
-  // Slider settings
+  const { addToCart } = useContext(CartContext); // Add CartContext
+
   const settings = {
     dots: false,
     infinite: true,
@@ -71,7 +70,6 @@ function Wishlist() {
 
   return (
     <div className="wishlist-page">
-      {/* Main Content */}
       <Container className="py-5 wishlist-section">
         <h1 className="wishlist-title">My Wishlist</h1>
         <p className="wishlist-subtitle">
@@ -81,13 +79,21 @@ function Wishlist() {
           <Button variant="danger" className="delete-all-button me-3">
             Delete all list
           </Button>
-          <Button variant="success" className="add-all-button">
+          <Button
+            variant="success"
+            className="add-all-button"
+            onClick={() => {
+              wishlistItems.forEach((item) => {
+                const product = productData.find((p) => p.id === item.id);
+                if (product) addToCart(product, 1);
+              });
+            }}
+          >
             Add all list to cart
           </Button>
         </div>
 
         {wishlistItems.length > 4 ? (
-          // Use Slider if there are more than 4 items
           <Slider {...settings}>
             {wishlistItems.map((item, index) => (
               <div key={item.id} className="wishlist-slide px-2">
@@ -117,7 +123,14 @@ function Wishlist() {
                           {item.stockStatus}
                         </Card.Text>
                         <div className="wishlist-buttons">
-                          <Button variant="success" className="add-to-cart-button me-2">
+                          <Button
+                            variant="success"
+                            className="add-to-cart-button me-2"
+                            onClick={() => {
+                              const product = productData.find((p) => p.id === item.id);
+                              if (product) addToCart(product, 1);
+                            }}
+                          >
                             Add to Cart
                           </Button>
                           <Button variant="danger" className="remove-button">
@@ -135,7 +148,6 @@ function Wishlist() {
             ))}
           </Slider>
         ) : (
-          // Static layout if 4 or fewer items
           <Row>
             {wishlistItems.map((item) => (
               <Col md={3} key={item.id} className="mb-4">
@@ -161,7 +173,14 @@ function Wishlist() {
                       {item.stockStatus}
                     </Card.Text>
                     <div className="wishlist-buttons">
-                      <Button variant="success" className="add-to-cart-button me-2">
+                      <Button
+                        variant="success"
+                        className="add-to-cart-button me-2"
+                        onClick={() => {
+                          const product = productData.find((p) => p.id === item.id);
+                          if (product) addToCart(product, 1);
+                        }}
+                      >
                         Add to Cart
                       </Button>
                       <Button variant="danger" className="remove-button">

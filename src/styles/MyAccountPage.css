@@ -1,64 +1,91 @@
+/* src/styles/MyAccountPage.css */
 .my-account-page {
-    background-color: #f8f9fa;
-  }
-  
+  background-color: #f8f9fa;
+}
+
+[data-theme="dark"] .my-account-page {
+  background-color: #1a1a1a; /* Dark background for the page */
+}
+
+.my-account-section {
+  background-color: #fff;
+  padding: 40px;
+}
+
+[data-theme="dark"] .my-account-section {
+  background-color: #2c2c2c; /* Slightly lighter dark background for sections */
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+}
+
+[data-theme="dark"] .section-title {
+  color: #e0e0e0; /* White text in dark mode */
+}
+
+.personal-info {
+  padding: 20px;
+}
+
+.photo-placeholder {
+  display: flex;
+  justify-content: center;
+}
+
+.photo-circle {
+  width: 120px;
+  height: 120px;
+  background-color: #d9d9d9; /* Gray placeholder */
+  border-radius: 50%;
+}
+
+[data-theme="dark"] .photo-circle {
+  background-color: #444; /* Darker gray for placeholder in dark mode */
+}
+
+.save-changes-btn {
+  background-color: #28a745; /* Green to match Figma */
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff; /* Ensure text is white */
+}
+
+[data-theme="dark"] .save-changes-btn {
+  background-color: #28a745; /* Keep green in dark mode */
+  color: #fff;
+}
+
+.save-changes-btn:hover {
+  background-color: #218838;
+}
+
+[data-theme="dark"] .save-changes-btn:hover {
+  background-color: #218838;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
   .my-account-section {
-    background-color: #fff;
-    padding: 40px;
-  }
-  
-  .section-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #000;
-    text-align: center;
-  }
-  
-  .personal-info {
     padding: 20px;
   }
-  
-  .photo-placeholder {
-    display: flex;
-    justify-content: center;
+
+  .section-title {
+    font-size: 1.5rem;
   }
-  
+
   .photo-circle {
-    width: 120px;
-    height: 120px;
-    background-color: #d9d9d9; /* Gray placeholder */
-    border-radius: 50%;
+    width: 100px;
+    height: 100px;
   }
-  
+
   .save-changes-btn {
-    background-color: #28a745; /* Green to match Figma */
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    padding: 8px 15px;
   }
-  
-  .save-changes-btn:hover {
-    background-color: #218838;
-  }
-  
-  /* Responsiveness */
-  @media (max-width: 768px) {
-    .my-account-section {
-      padding: 20px;
-    }
-  
-    .section-title {
-      font-size: 1.5rem;
-    }
-  
-    .photo-circle {
-      width: 100px;
-      height: 100px;
-    }
-  
-    .save-changes-btn {
-      font-size: 0.9rem;
-      padding: 8px 15px;
-    }
-  }
+}
