@@ -1,4 +1,4 @@
-/* src/styles/FooterSection.css */
+/* Existing styles (unchanged) */
 .footer-section {
   background-color: #f8f9fa;
   color: #000;
@@ -7,6 +7,7 @@
 [data-theme="dark"] .footer-section {
   background-color: #1a1a1a;
   color: #e0e0e0;
+  border-top: solid 1px #ffffff80;
 }
 
 .logo-image {
@@ -233,6 +234,123 @@
   text-align: end;
 }
 
+/* Modal Styles */
+.modal-content {
+  background-color: #f8f9fa;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+}
+
+[data-theme="dark"] .modal-content {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+.modal-header {
+  border-bottom: 1px solid #dee2e6;
+}
+
+[data-theme="dark"] .modal-header {
+  border-bottom: 1px solid #444;
+}
+
+.modal-title {
+  font-weight: bold;
+  color: #000;
+}
+
+[data-theme="dark"] .modal-title {
+  color: #e0e0e0;
+}
+
+.modal-image-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.modal-image {
+  max-width: 150px;
+  height: auto;
+}
+
+.modal-body p {
+  margin-bottom: 15px;
+  color: #000;
+}
+
+[data-theme="dark"] .modal-body p {
+  color: #e0e0e0;
+}
+
+.modal-body ul {
+  list-style: none;
+  padding: 0;
+}
+
+.help-list li,
+.signup-list li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.help-list li:before,
+.signup-list li:before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #60AD4C;
+}
+
+[data-theme="dark"] .help-list li:before,
+[data-theme="dark"] .signup-list li:before {
+  color: #60AD4C;
+}
+
+.modal-body a {
+  color: #ff9900;
+  text-decoration: none;
+}
+
+[data-theme="dark"] .modal-body a {
+  color: #ff9900;
+}
+
+.modal-body a:hover {
+  text-decoration: underline;
+}
+
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+}
+
+[data-theme="dark"] .modal-footer {
+  border-top: 1px solid #444;
+}
+
+.modal-footer .btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: #fff;
+}
+
+[data-theme="dark"] .modal-footer .btn-secondary {
+  background-color: #555;
+  border-color: #555;
+  color: #e0e0e0;
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #5a6268;
+}
+
+[data-theme="dark"] .modal-footer .btn-secondary:hover {
+  background-color: #666;
+  border-color: #666;
+}
+
 /* Responsiveness */
 @media (max-width: 768px) {
   .footer-address {
@@ -268,5 +386,8 @@
   .bottom-link {
     font-size: 0.8rem;
     margin-left: 10px;
+  }
+  .modal-image {
+    max-width: 120px;
   }
 }

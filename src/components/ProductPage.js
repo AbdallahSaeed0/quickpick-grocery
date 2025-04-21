@@ -1,15 +1,18 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Container, Row, Col, Card, Form, Button, InputGroup } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom'; // Add useNavigate
 import { FaHeart, FaStar, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import productData from '../data/products.json';
 import '../styles/ProductPage.css';
 import { CartContext } from '../context/CartContext';
+import { WishlistContext } from '../context/WishlistContext';
 
 function ProductPage() {
   const { id } = useParams();
-  const { addToCart } = useContext(CartContext); // Add CartContext
+  const navigate = useNavigate(); // Add useNavigate hook
+  const { addToCart } = useContext(CartContext);
+  const { wishlist, toggleWishlist } = useContext(WishlistContext);
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [relatedProducts, setRelatedProducts] = useState([]);
@@ -63,13 +66,16 @@ function ProductPage() {
   const handleBuyNow = () => {
     if (product) {
       addToCart(product, quantity);
-      window.location.href = '/cart'; // Redirect to cart page
+      navigate('/cart'); // Use navigate instead of window.location.href
     }
   };
 
   if (!product) {
     return <div>Loading...</div>;
   }
+
+  // Check if the product is in the wishlist
+  const isInWishlist = wishlist.some((item) => item.id === product.id);
 
   return (
     <div className="product-page">
@@ -113,7 +119,11 @@ function ProductPage() {
           <Col md={7}>
             <div className="d-flex justify-content-between align-items-center mb-3">
               <h1 className="product-title">{product.name}</h1>
-              <FaHeart className="wishlist-icon" />
+              <FaHeart
+                className={`wishlist-icon ${isInWishlist ? 'wishlist-active' : ''}`}
+                onClick={() => toggleWishlist(product)}
+                style={{ cursor: 'pointer' }}
+              />
             </div>
             <p className="product-price">
               EGP {parseFloat(product.price).toFixed(2)}{' '}

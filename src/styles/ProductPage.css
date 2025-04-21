@@ -370,6 +370,15 @@
   gap: 5px;
   margin-bottom: 10px;
 }
+.wishlist-icon {
+  font-size: 1.5rem;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.wishlist-icon.wishlist-active {
+  color: red;
+}
 
 /* Responsiveness */
 @media (max-width: 768px) {

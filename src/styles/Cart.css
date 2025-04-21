@@ -98,7 +98,7 @@
   .quantity-selector .btn {
     border-radius: 50%;
     width: 30px;
-    height: 30px;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -277,7 +277,7 @@
   
     .quantity-selector .btn {
       width: 25px;
-      height: 25px;
+      height: auto;
     }
   
     .summary-title,

@@ -27,19 +27,30 @@ export const AuthProvider = ({ children }) => {
     return false;
   };
 
-  const signup = (fullName, email, password) => {
+  const signup = (fullName, email, password, phone = '', gender = '') => {
     // Simulate backend signup
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const userExists = users.some((u) => u.email === email);
     if (userExists) {
       return false; // User already exists
     }
-    const newUser = { fullName, email, password };
+    const newUser = { fullName, email, password, phone, gender };
     users.push(newUser);
     localStorage.setItem('users', JSON.stringify(users));
     setUser(newUser);
     localStorage.setItem('user', JSON.stringify(newUser));
     return true;
+  };
+
+  const updateUser = (updatedUser) => {
+    setUser(updatedUser);
+    localStorage.setItem('user', JSON.stringify(updatedUser));
+    // Update the user in the users array in localStorage
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const updatedUsers = users.map((u) =>
+      u.email === updatedUser.email ? updatedUser : u
+    );
+    localStorage.setItem('users', JSON.stringify(updatedUsers));
   };
 
   const logout = () => {
@@ -48,7 +59,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, signup, logout }}>
+    <AuthContext.Provider value={{ user, login, signup, updateUser, logout }}>
       {children}
     </AuthContext.Provider>
   );

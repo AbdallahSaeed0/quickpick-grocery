@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/MyAccountPage.css';
 
 function PersonalInformation() {
-  const { user } = useContext(AuthContext);
+  const { user, updateUser } = useContext(AuthContext); // Add updateUser from AuthContext
   const navigate = useNavigate();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -38,7 +38,7 @@ function PersonalInformation() {
         phone,
         gender,
       };
-      localStorage.setItem('user', JSON.stringify(updatedUser));
+      updateUser(updatedUser); // Use updateUser to save changes
       setSuccess('Changes saved successfully!');
       setError('');
     } catch (err) {

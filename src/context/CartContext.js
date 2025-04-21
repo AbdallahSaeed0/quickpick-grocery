@@ -3,12 +3,16 @@ import React, { createContext, useState } from 'react';
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]); // Initialize as empty array
+  const [cart, setCart] = useState([]);
 
-  // Add item to cart
   const addToCart = (product, quantity = 1) => {
     setCart((prevCart) => {
       const existingItem = prevCart.find((item) => item.id === product.id);
+      const parsedProduct = {
+        ...product,
+        price: parseFloat(product.price) || 0,
+        image: product.image || '/assets/placeholder.jpg', // Ensure image is included
+      };
       if (existingItem) {
         return prevCart.map((item) =>
           item.id === product.id
@@ -16,16 +20,14 @@ export const CartProvider = ({ children }) => {
             : item
         );
       }
-      return [...prevCart, { ...product, quantity }];
+      return [...prevCart, { ...parsedProduct, quantity }];
     });
   };
 
-  // Remove item from cart
   const removeFromCart = (productId) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
   };
 
-  // Update quantity of an item in the cart
   const updateQuantity = (productId, newQuantity) => {
     if (newQuantity <= 0) {
       removeFromCart(productId);
@@ -40,13 +42,16 @@ export const CartProvider = ({ children }) => {
 
   const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
   const totalPrice = cart
-    .reduce((sum, item) => sum + item.price * item.quantity, 0)
+    .reduce((sum, item) => sum + (parseFloat(item.price) || 0) * item.quantity, 0)
     .toFixed(2);
+
+  console.log('Cart updated:', cart, 'Total Price:', totalPrice);
 
   return (
     <CartContext.Provider
       value={{
         cart,
+        setCart, // Expose setCart for editing
         addToCart,
         removeFromCart,
         updateQuantity,

@@ -1,52 +1,40 @@
 /* src/styles/MyOrders.css */
-.my-orders {
+.my-account-page {
   background-color: #fff;
-  padding: 20px;
 }
 
-[data-theme="dark"] .my-orders {
+[data-theme="dark"] .my-account-page {
   background-color: #1a1a1a;
 }
 
-.my-orders .nav-tabs {
-  border-bottom: 2px solid #dee2e6;
-  justify-content: center;
-}
-
-[data-theme="dark"] .my-orders .nav-tabs {
-  border-color: #444;
-}
-
-.my-orders .nav-link {
-  font-size: 1rem;
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
   color: #333;
-  border: none;
-  border-bottom: 2px solid transparent;
-  margin: 0 20px;
-  padding: 8px 0;
-  text-transform: uppercase;
 }
 
-[data-theme="dark"] .my-orders .nav-link {
+[data-theme="dark"] .section-title {
   color: #e0e0e0;
 }
 
-.my-orders .nav-link.active {
+.nav-tabs {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.nav-tabs .nav-link {
+  color: #666;
+  font-weight: 500;
+}
+
+.nav-tabs .nav-link.active {
   color: #28a745;
   border-bottom: 2px solid #28a745;
 }
 
-[data-theme="dark"] .my-orders .nav-link.active {
-  color: #28a745;
-  background-color: transparent
-}
-
 .order-item {
-  background-color: #e6f4ea;
-  border-radius: 10px;
   border: 1px solid #dee2e6;
-  padding: 15px;
-  position: relative;
+  border-radius: 10px;
+  background-color: #fff;
 }
 
 [data-theme="dark"] .order-item {
@@ -55,10 +43,12 @@
 }
 
 .order-image-placeholder {
-  width: 80px;
+  width: 100%;
   height: 80px;
-  background-color: #d9d9d9;
+  background-color: #e9ecef;
   border-radius: 5px;
+  background-size: cover;
+  background-position: center;
 }
 
 [data-theme="dark"] .order-image-placeholder {
@@ -68,6 +58,7 @@
 .order-title {
   font-size: 1.2rem;
   font-weight: 600;
+  color: #333;
   margin-bottom: 5px;
 }
 
@@ -75,113 +66,64 @@
   color: #e0e0e0;
 }
 
-.order-description {
+.order-status,
+.order-total,
+.order-description,
+.order-date,
+.order-shipping,
+.order-subtotal,
+.order-items {
   font-size: 0.9rem;
   color: #666;
   margin-bottom: 5px;
 }
 
-[data-theme="dark"] .order-description {
+[data-theme="dark"] .order-status,
+[data-theme="dark"] .order-total,
+[data-theme="dark"] .order-description,
+[data-theme="dark"] .order-date,
+[data-theme="dark"] .order-shipping,
+[data-theme="dark"] .order-subtotal,
+[data-theme="dark"] .order-items {
   color: #b0b0b0;
 }
 
-.order-date {
-  font-size: 0.9rem;
-  color: #999;
-  margin-bottom: 0;
-}
-
-[data-theme="dark"] .order-date {
-  color: #b0b0b0;
-}
-
-.order-price {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #28a745;
-  margin-bottom: 10px;
-}
-
-[data-theme="dark"] .order-price {
-  color: #28a745;
-}
-
-.order-dropdown-icon {
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #fff;
-  background-color: #ff9900;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-}
-
-[data-theme="dark"] .order-dropdown-icon {
-  background-color: #ff9900;
-  color: #fff; /* Ensure icon stays white */
-}
-
-/* Button styling */
 .order-item .btn-outline-success {
   border-radius: 20px;
   padding: 5px 15px;
-  font-size: 0.9rem;
   color: #28a745;
   border-color: #28a745;
+}
+.order-item .btn-outline-success:hover {
+  color: #fff;
 }
 
 [data-theme="dark"] .order-item .btn-outline-success {
-  border-color: #28a745;
   color: #28a745;
+  border-color: #28a745;
 }
 
-.order-item .btn-outline-success:hover {
-  background-color: #28a745;
-  color: #fff;
-}
-
-[data-theme="dark"] .order-item .btn-outline-success:hover {
-  background-color: #28a745;
-  color: #fff;
-}
-
-/* Responsiveness */
 @media (max-width: 768px) {
-  .my-orders .nav-link {
-    font-size: 0.9rem;
-    margin: 0 10px;
+  .section-title {
+    font-size: 1.2rem;
   }
-  .order-item {
-    padding: 10px;
-  }
-  .order-image-placeholder {
-    width: 60px;
-    height: 60px;
-  }
+
   .order-title {
     font-size: 1rem;
   }
+
+  .order-status,
+  .order-total,
   .order-description,
-  .order-date {
+  .order-date,
+  .order-shipping,
+  .order-subtotal,
+  .order-items {
     font-size: 0.8rem;
   }
-  .order-price {
-    font-size: 1rem;
-  }
+
   .order-item .btn-outline-success {
     font-size: 0.8rem;
     padding: 4px 10px;
-  }
-  .order-dropdown-icon {
-    right: 10px;
-    width: 20px;
-    height: 20px;
-    font-size: 0.7rem;
   }
 }

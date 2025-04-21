@@ -23,7 +23,7 @@ function SignUp() {
     }
     const success = signup(fullName, email, password);
     if (success) {
-      navigate('/'); // Redirect to homepage on successful signup
+      navigate('/home'); // Redirect to homepage on successful signup
     } else {
       setError('Email already exists');
     }

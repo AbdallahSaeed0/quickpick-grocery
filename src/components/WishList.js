@@ -4,30 +4,45 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import productData from '../data/products.json';
 import '../styles/WishList.css';
 import { CartContext } from '../context/CartContext';
+import { WishlistContext } from '../context/WishlistContext';
 
-const wishlistProductIds = [1, 2, 3, 4, 5];
+function Wishlist() {
+  const { addToCart } = useContext(CartContext);
+  const { wishlist, removeFromWishlist, setWishlist } = useContext(WishlistContext);
 
-const wishlistItems = wishlistProductIds.map((id) => {
-  const product = productData.find((p) => p.id === id);
-  if (!product) return null;
+  const getTimeDifference = (addedAt) => {
+    const now = new Date();
+    const addedTime = new Date(addedAt);
+    const diffInMs = now - addedTime;
 
-  return {
+    const diffInSeconds = Math.floor(diffInMs / 1000);
+    const diffInMinutes = Math.floor(diffInSeconds / 60);
+    const diffInHours = Math.floor(diffInMinutes / 60);
+    const diffInDays = Math.floor(diffInHours / 24);
+
+    if (diffInDays > 0) {
+      return `${diffInDays} day${diffInDays > 1 ? 's' : ''} ago`;
+    } else if (diffInHours > 0) {
+      return `${diffInHours} hour${diffInHours > 1 ? 's' : ''} ago`;
+    } else if (diffInMinutes > 0) {
+      return `${diffInMinutes} minute${diffInMinutes > 1 ? 's' : ''} ago`;
+    } else {
+      return `${diffInSeconds} second${diffInSeconds > 1 ? 's' : ''} ago`;
+    }
+  };
+
+  const wishlistItems = wishlist.map((product) => ({
     id: product.id,
     name: product.name,
     brand: 'QuickPick Brand',
     price: `${parseFloat(product.price).toFixed(2)} EGP`,
     originalPrice: `${(parseFloat(product.price) + 20).toFixed(2)} EGP`,
-    stockStatus: id % 2 === 0 ? 'Low Stock' : 'In Stock',
-    savedTime: '3 days ago',
+    stockStatus: product.id % 2 === 0 ? 'Low Stock' : 'In Stock',
+    savedTime: getTimeDifference(product.addedAt),
     image: product.image,
-  };
-}).filter((item) => item !== null);
-
-function Wishlist() {
-  const { addToCart } = useContext(CartContext); // Add CartContext
+  }));
 
   const settings = {
     dots: false,
@@ -76,7 +91,15 @@ function Wishlist() {
           {wishlistItems.length} Items to purchase later
         </p>
         <div className="wishlist-actions mb-4">
-          <Button variant="danger" className="delete-all-button me-3">
+          <Button
+            variant="danger"
+            className="delete-all-button me-3"
+            onClick={() => {
+              setWishlist([]); // Clear the wishlist
+              console.log('Wishlist cleared'); // Debug log
+            }}
+            disabled={wishlistItems.length === 0}
+          >
             Delete all list
           </Button>
           <Button
@@ -84,18 +107,21 @@ function Wishlist() {
             className="add-all-button"
             onClick={() => {
               wishlistItems.forEach((item) => {
-                const product = productData.find((p) => p.id === item.id);
+                const product = wishlist.find((p) => p.id === item.id);
                 if (product) addToCart(product, 1);
               });
             }}
+            disabled={wishlistItems.length === 0}
           >
             Add all list to cart
           </Button>
         </div>
 
-        {wishlistItems.length > 4 ? (
+        {wishlistItems.length === 0 ? (
+          <p>Your wishlist is empty.</p>
+        ) : wishlistItems.length > 4 ? (
           <Slider {...settings}>
-            {wishlistItems.map((item, index) => (
+            {wishlistItems.map((item) => (
               <div key={item.id} className="wishlist-slide px-2">
                 <Row>
                   <Col md={12}>
@@ -127,13 +153,17 @@ function Wishlist() {
                             variant="success"
                             className="add-to-cart-button me-2"
                             onClick={() => {
-                              const product = productData.find((p) => p.id === item.id);
+                              const product = wishlist.find((p) => p.id === item.id);
                               if (product) addToCart(product, 1);
                             }}
                           >
                             Add to Cart
                           </Button>
-                          <Button variant="danger" className="remove-button">
+                          <Button
+                            variant="danger"
+                            className="remove-button"
+                            onClick={() => removeFromWishlist(item.id)}
+                          >
                             Remove from Wishlist
                           </Button>
                         </div>
@@ -177,13 +207,17 @@ function Wishlist() {
                         variant="success"
                         className="add-to-cart-button me-2"
                         onClick={() => {
-                          const product = productData.find((p) => p.id === item.id);
+                          const product = wishlist.find((p) => p.id === item.id);
                           if (product) addToCart(product, 1);
                         }}
                       >
                         Add to Cart
                       </Button>
-                      <Button variant="danger" className="remove-button">
+                      <Button
+                        variant="danger"
+                        className="remove-button"
+                        onClick={() => removeFromWishlist(item.id)}
+                      >
                         Remove from Wishlist
                       </Button>
                     </div>

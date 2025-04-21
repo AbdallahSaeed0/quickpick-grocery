@@ -33,11 +33,11 @@ function CustomNavbar() {
             <div className="two-sec text-center col-lg-9 d-flex justify-content-between align-items-center">
               <div className="me-3 header-text">
                 <i className="bi bi-star-fill text-warning me-1"></i> Get 5% Off your first order,{' '}
-                <a href="/location" className="ms-2 orders"><strong className="theme-color ms-2 orders">Promo:ORDER5</strong></a>
+                <a href="/#" className="ms-2 orders"><strong className="theme-color ms-2 orders">Promo:ORDER5</strong></a>
               </div>
               <div className="me-3 header-text">
                 <i className="bi bi-geo-alt-fill me-1"></i> 1234 Market Street, Countryland{' '}
-                <a href="/location" className="ms-2 orders">Change Location</a>
+                <a href="/#" className="ms-2 orders">Change Location</a>
               </div>
             </div>
 
@@ -82,7 +82,7 @@ function CustomNavbar() {
 
           <BootstrapNavbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link as={Link} to="/" className={`mx-2 ${isActive('/') ? 'active' : ''}`}>
+              <Nav.Link as={Link} to="/home" className={`mx-2 ${isActive('/home') ? 'active' : ''}`}>
                 Home
               </Nav.Link>
               <Nav.Link as={Link} to="/search" className={`mx-2 ${isActive('/search') ? 'active' : ''}`}>
@@ -94,7 +94,7 @@ function CustomNavbar() {
               <Nav.Link as={Link} to="/categories" className={`mx-2 ${isActive('/categories') ? 'active' : ''}`}>
                 Categories
               </Nav.Link>
-              <Nav.Link as={Link} to="/track" className={`mx-2 ${isActive('/track') ? 'active' : ''}`}>
+              <Nav.Link as={Link} to="/track-order" className={`mx-2 ${isActive('/track-order') ? 'active' : ''}`}>
                 Track Order
               </Nav.Link>
               <Nav.Link as={Link} to="/wishlist" className={`mx-2 ${isActive('/wishlist') ? 'active' : ''}`}>

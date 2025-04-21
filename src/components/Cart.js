@@ -26,7 +26,7 @@ function Cart() {
 
   return (
     <div className="cart-page">
-        <div className='border-header'>
+      <div className='border-header'>
         <h1 className="cart-title text-center mb-5">Cart</h1>
       </div>
       <Container className="py-5">
@@ -39,14 +39,14 @@ function Cart() {
                 <Card className="cart-item mb-3" key={item.id}>
                   <Card.Body>
                     <Row className="align-items-center">
-                      <Col xs={3} md={2}>
+                      <Col xs={12} md={2}>
                         <img
                           src={process.env.PUBLIC_URL + item.image}
                           alt={item.name}
                           className="cart-item-image"
                         />
                       </Col>
-                      <Col xs={9} md={6}>
+                      <Col xs={12} md={6} className="text-center mt-3">
                         <h5 className="cart-item-name">{item.name}</h5>
                         <p className="cart-item-price">
                           EGP {(parseFloat(item.price) * item.quantity).toFixed(2)} x {item.quantity}
@@ -58,7 +58,7 @@ function Cart() {
                           </p>
                         )}
                       </Col>
-                      <Col xs={6} md={2} className="text-center">
+                      <Col xs={12} md={2} className="text-center">
                         <div className="quantity-selector d-flex align-items-center justify-content-center">
                           <Button
                             variant="outline-secondary"
@@ -77,7 +77,7 @@ function Cart() {
                           </Button>
                         </div>
                       </Col>
-                      <Col xs={6} md={2} className="text-end">
+                      <Col xs={12} md={2} className="text-center mt-3">
                         <Button
                           variant="outline-danger"
                           size="sm"
@@ -169,26 +169,28 @@ function Cart() {
                     className="suggestion-image me-3"
                   />
                   <div className="suggestion-details d-flex align-items-center justify-content-between flex-grow-1">
-                    <div>
+                    <div className='col-9'>
                       <h5 className="suggestion-name">{suggestionProduct.name}</h5>
                       <p className="suggestion-price">
                         EGP {suggestionPrice}
                       </p>
                     </div>
-                    <Button
-                      variant="success"
-                      className="add-to-cart-btn"
-                      onClick={() => addToCart(suggestionProduct, 1)}
-                    >
-                      Add to Cart
-                    </Button>
+                    <div className='col-md-3'>
+                      <Button
+                        variant="success"
+                        className="add-to-cart-btn"
+                        onClick={() => addToCart(suggestionProduct, 1)}
+                      >
+                        Add to Cart
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </Col>
             </Row>
             <Row className="mt-2">
               <Col className="text-center">
-                <Button variant="link" as={Link} to="/products">
+                <Button variant="link" className='text-black fw-bolder' as={Link} to="/offers">
                   See More Suggestions
                 </Button>
               </Col>
